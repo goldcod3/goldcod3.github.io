@@ -161,90 +161,58 @@
 
 <p>This is a project developed in the cybersecurity bootcamp of 42Madrid.</p>
 
-<h2 id="subject">Subject:</h2>
-<p>The purpose of the project is to develop a server with two hidden services in the <strong>Tor</strong> network..</p>
+<h1 id="subject">Subject:</h1>
+
+<p>The objective of this project is to create a <strong>web page</strong> and make it accessible from the <strong>Tor network</strong> by creating a hidden service.</p>
+
+<p>The <strong>hidden service</strong> is a web service that is hidden in the Tor network,
+But what is <a href="https://www.torproject.org/"><strong>Tor</strong></a>?</p>
+
+<blockquote>
+<strong>Tor is an application</strong> that takes the data that enters and exits through your Internet connection and passes it through a circuit of servers around the world. This <strong>makes your traffic completely anonymous</strong>.
+<br />
+A little-known use of Tor is anonymous access to the <strong>Deep Web or Darknet</strong>, a little-known part of the Internet, inaccessible from search engines such as Google, and hosting <strong>content of often questionable legality</strong>.
+</blockquote>
+
+<h3 id="requirements">Requirements:</h3>
 <ul>
-  <li>1 hidden service <strong>HTTP</strong></li>
-  <li>
-    <p>1 hidden service <strong>SSH</strong></p>
-  </li>
-  <li>The <strong>HTTP</strong> service must have a static web site with a single <strong><em>index.html</em></strong> file and will only be accessible
-from a url xxxxxxxxxxxxxxxx.onion.</li>
+  <li>The <strong>HTTP</strong> service must have a static web site with a single <strong><em>index.html</em></strong> file and will only be accessible from a url xxxxxxxxxxxxxxxx.onion.</li>
   <li>A <strong>Nginx</strong> service will be used to configure the web server.</li>
   <li>The page can be accessed via <strong>HTTP</strong> through port <strong>80</strong>.</li>
   <li>The access to the server via <strong>SSH</strong> on port <strong>4242</strong> must be enabled.</li>
   <li>No other ports should be opened and no firewall rules should be set.</li>
 </ul>
 
-<h3 id="files-to-submit">Files to submit:</h3>
+<h3 id="files-to-submit"><strong>Files to submit</strong>:</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>index.html
 nginx.conf
 sshd_config
 torrc
 </code></pre></div></div>
+<p><br /></p>
+<h3 id="bonus-part">Bonus part:</h3>
+<ul>
+  <li>SSH fortification.</li>
+  <li>An interactive website, more impressive than a sad static page. You can use external libraries for it, but not a framework.</li>
+</ul>
+
 <hr />
 
-<h2 id="proyect">Proyect:</h2>
-<p>This project was developed with docker containers to perform all the connection and configuration tests,
+<h1 id="proyect">Proyect:</h1>
+<p>This project was developed with <a href="https://www.docker.com/">docker</a> containers to perform all the connection and configuration tests,
 without damaging the system. It has a <strong>Server</strong> container and a <strong>Client</strong> container.</p>
 <ul>
   <li>The Server executes the necessary services and configurations.</li>
   <li>The Client was created to perform SSH connection tests to the configured hidden service.</li>
 </ul>
 
-<p>When the Server container is run, the files with the configuration of each service are copied, the services are enabled and the xxxxxxxxx.onion urls for the HTTP and SSH service are the xxxxxxxxx.onion urls will be generated for the HTTP and SSH service, according to the configurations previously made in the requested files.</p>
+<center>
+<img src="https://media.giphy.com/media/citBl9yPwnUOs/giphy.gif" />
+</center>
 
-<h3 id="directory-structure">Directory Structure:</h3>
+<h2 id="server">Server</h2>
 
-<ul>
-  <li>DIRECTORY: ft_onion
-    <ul>
-      <li>DIRECTORY: src
-        <ul>
-          <li>DIRECTORY: url</li>
-          <li>FILE: dockerfile</li>
-          <li>FILE: index.html</li>
-          <li>FILE: sshd_config</li>
-          <li>FILE: nginx.conf</li>
-          <li>FILE: torrc</li>
-        </ul>
-      </li>
-      <li>DIRECTORY: cli
-        <ul>
-          <li>FILE: dockerfile</li>
-        </ul>
-      </li>
-      <li>FILE: Makefile</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="server">Server</h3>
-<p><strong>Services</strong>:</p>
-<ul>
-  <li><strong>Nginx</strong> web server [port 80:80].</li>
-  <li><strong>Openssh-server</strong> service (Server) [port 4242:4242].</li>
-  <li><strong>Tor</strong> hidden service.</li>
-</ul>
-
-<h3 id="client">Client</h3>
-<p><strong>Service</strong>:</p>
-<ul>
-  <li><strong>Ssh</strong> service (Client).</li>
-  <li><strong>Tor</strong> service (Client).</li>
-</ul>
-
-<hr />
-
-<h2 id="environment-execution">Environment Execution</h2>
-
-<h3 id="dependencies">Dependencies:</h3>
-<ul>
-  <li>You must have <a href="https://www.docker.com/products/docker-desktop/"><strong>Docker Desktop</strong></a> and <strong>make</strong> [optional] installed on your computer.</li>
-  <li>You must also have <a href="https://www.torproject.org/es/download"><strong>Tor</strong></a> browser installed for the HTTP test.</li>
-</ul>
-
-<h4 id="dokerfile-server"><strong>Dokerfile Server</strong>:</h4>
+<p>Based on a debian docker container generated by the following Dockerfile:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM debian:latest
 
 # Installation packages
@@ -271,7 +239,33 @@ RUN echo "sshusr:onion" | chpasswd
 ENTRYPOINT service ssh start; nginx; tor  
 </code></pre></div></div>
 <p><br /></p>
-<h4 id="dokerfile-client"><strong>Dokerfile Client</strong>:</h4>
+
+<p><strong>The following packages are installed and configured</strong>:</p>
+<ul>
+  <li><strong>Nginx</strong> [port 80:80].</li>
+  <li><strong>Openssh-server</strong> (Server) [port 4242:4242].</li>
+  <li><strong>Tor</strong></li>
+</ul>
+
+<p>With the <strong>COPY</strong> commands that are indicated in the Dockerfile, the files are sent to the directory paths where they should replace the original files, loading the requested settings.</p>
+
+<p><strong>The following steps were followed to enable all services:</strong></p>
+<ul>
+  <li>A static test website was developed according to the requirements of the subject in an <strong>index.html</strong> file.</li>
+  <li>By editing the <strong>torrc</strong> file we enabled the hidden services for HTTP and SSH.</li>
+  <li>The <strong>nginx.conf</strong> file was configured to enable the web server and host a previously developed static web page.</li>
+  <li>By modifying the <strong>sshd_config</strong> file we changed the default port and fortified the security of the SSH server.</li>
+</ul>
+
+<p>In addition to installing the necessary applications and copying the configuration files into the container, <strong>an user is created</strong> which has the privileges to access the SSH service when fortifying. <strong>[user=sshusr, pass=onion]</strong></p>
+
+<center>
+<img src="https://media.giphy.com/media/EFXGvbDPhLoWs/giphy.gif" />
+</center>
+
+<h2 id="client">Client:</h2>
+
+<p>Based on a debian docker container generated by the following Dockerfile:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM debian:latest
 
 # Installation packages
@@ -281,57 +275,38 @@ RUN apt-get install tor ssh -y
 # Service startup.
 ENTRYPOINT service ssh start; tor
 </code></pre></div></div>
-<p><br />
-To facilitate the execution and creation of the images and containers with docker, a <strong>Makefile</strong> with the following 
-instructions was generated a <strong>Makefile</strong> with the following instructions:</p>
+<p><br /></p>
 
-<p><strong>Makefile</strong>:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I_SERVER = img_server
-I_CLIENT = img_client
+<p><strong>The following packages are installed</strong>:</p>
+<ul>
+  <li><strong>Ssh</strong> (Client)</li>
+  <li><strong>Tor</strong></li>
+</ul>
 
-S_NAME = ft_onion
-C_NAME = ft_debian
-
-S_DIR = srv
-C_DIR = cli
-
-V_DIR = $(PWD)/srv/url:/var/lib/tor/
-
-all: server client
-	@echo "*--&gt; Containers Sucess Running &lt;--*"
-
-server:
-	@docker build -t $(I_SERVER) $(S_DIR)/.
-	@docker rm -fv $(S_NAME) &amp;&amp; docker run -d -v $(V_DIR) -p 80:80 -p 4242:4242 --name $(S_NAME) $(I_SERVER)
-	@echo "*--&gt; Server Sucess Running &lt;--*"
-
-client:
-	@docker build -t $(I_CLIENT) $(C_DIR)/.
-	@docker rm -fv $(C_NAME) &amp;&amp; docker run -d --name $(C_NAME) $(I_CLIENT)
-	@echo "*--&gt; Client Sucess Running &lt;--*"
-
-exe: client
-	@docker exec -it $(C_NAME) bash
-
-clean:
-	@docker rm -fv $(S_NAME) &amp;&amp; docker rm -fv $(C_NAME)
-	@echo "*--&gt; Containers Stoped and Deleted &lt;--*"
-</code></pre></div></div>
-<p><br />
-When executing the server a Volume is generated in the Server container, this will return the directories where the <strong>hostname</strong> files are located.
-hostname** files are located, in them we get the url’s xxxxxxx.onion to use.</p>
-
-<p><strong>Options of Makefile</strong>:</p>
+<p>To speed up the deployment and execution of the containers, a Makefile was configured with the following instructions:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- make:        Generates the Server container, the Client container and both images.
 - make server: Generates the Server container image.
 - make client: Generates the image of the Client container.
 - make exe:    Runs the Client container and returns a Bash.
 - make clean:  Stops and removes the Server and Client containers. 
 </code></pre></div></div>
-<p><br />
-<strong>Configuration files</strong>:
-When the Server container image is created, the configuration files are copied allowing you to start up all the necessary services.
-In the Dockerfile of the Server you can see the paths that each file must have.</p>
+<p><br /></p>
+
+<p>When executing the server, a Volume is generated in the Server container synchronizing the directory <strong>/url</strong>, this will return the directories where the <strong>hostname</strong> files are located, these contain the url’s <strong>xxxxxxxxx.onion</strong> for the HTTP and SSH.</p>
+<ul>
+  <li><strong>hidden_service</strong> -&gt; HTTP</li>
+  <li><strong>other_hidden_service</strong> -&gt; SSH</li>
+</ul>
+
+<hr />
+
+<h1 id="docker-test">Docker test</h1>
+
+<h3 id="dependencies">Dependencies:</h3>
+<ul>
+  <li>You must have <a href="https://www.docker.com/products/docker-desktop/"><strong>Docker Desktop</strong></a> and <strong>make</strong> [optional] installed on your computer.</li>
+  <li>You must also have <a href="https://www.torproject.org/es/download"><strong>Tor</strong></a> browser installed for the HTTP test.</li>
+</ul>
 
 <h3 id="execution-instructions">Execution Instructions:</h3>
 <ol>
@@ -339,27 +314,40 @@ In the Dockerfile of the Server you can see the paths that each file must have.<
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/goldcod3/Ft_onion.git
 </code></pre></div>    </div>
   </li>
-  <li>Run <strong>make</strong> inside the cloned repository.</li>
-  <li>The Server container generates in the <strong>srv/url</strong> directory the HTTP and SSH urls for the hidden tor services.</li>
+  <li>Inside the cloned repository run:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make &amp;&amp; make exec
+</code></pre></div>    </div>
+  </li>
+  <li>The Server container generates in the <strong>srv/url</strong> directory the HTTP and SSH urls for the hidden tor services.
+    <ul>
+      <li><strong>srv/url/hidden_service/hostname -&gt; HTTP</strong></li>
+      <li><strong>srv/url/other_hidden_service/hostname -&gt; SSH</strong></li>
+    </ul>
+  </li>
 </ol>
 
-<p><strong>Access to the Services:</strong></p>
+<h3 id="access-to-the-services"><strong>Access to the Services:</strong></h3>
 <ul>
-  <li>To access the <strong>HTTP</strong> service, you must run the Tor browser and enter the url found in <strong>srv/url/hidden_service/hostname</strong>
+  <li>To access the <strong>HTTP</strong> service, you must run the <strong>Tor browser</strong> and enter the url found in <strong>srv/url/hidden_service/hostname</strong>
 in the repository folder.</li>
-  <li>To access the <strong>SSH</strong> service run the Client container and inside the container run the command:</li>
+  <li>To access the <strong>SSH</strong> service run the Client container and inside the container run the command:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torify ssh sshusr@xxxxxxxxxxx.onion -p 4242
+</code></pre></div>    </div>
+    <p>Where:</p>
+    <ul>
+      <li>The user’s name is <strong>[sshusr]</strong>.</li>
+      <li>The user’s password is <strong>[onion]</strong>.</li>
+      <li>The port of the SSH connection is <strong>[4242]</strong>.</li>
+      <li>The url xxxxxxxxx.onion is located in <strong>srv/url/other_hidden_service/hostname</strong> within the repository.</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torify ssh sshusr@xxxxxxxxxxx.onion -p 4242
-</code></pre></div></div>
-<p><br />
-Where:</p>
-<ul>
-  <li>The user’s name is [sshusr].</li>
-  <li>The user’s password is [onion]</li>
-  <li>The port of the SSH connection is [4242].</li>
-  <li>The url xxxxxxxxxxxxxxx.onion is located in <strong>srv/url/other_hidden_service/hostname</strong> within the repository.</li>
-</ul>
+<center>
+<img src="https://media.giphy.com/media/11Hid00JjX2ql2/giphy.gif" />
+</center>
+
+<p><strong>Enjoy it!</strong></p>
 
 <p>View the source code <a href="https://github.com/goldcod3/Ft_onion">here</a></p>
 

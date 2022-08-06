@@ -159,7 +159,7 @@
   <div class="page animate">
     <p>Encrypt and decrypt multiple files and directories.</p>
 
-<p>This is a project developed in the cybersecurity bootcamp of 42Madrid.</p>
+<p>This is a project developed in the cybersecurity bootcamp of <strong>42Madrid</strong>.</p>
 
 <h3 id="warning"><strong><em>WARNING:</em></strong></h3>
 <ul>
@@ -169,7 +169,13 @@
   <li>It is recommended to run the program in a docker container or a virtual machine.</li>
 </ul>
 
-<p><strong>[Don’t lose the totem.key]</strong></p>
+<center>
+<strong>[Don't lose the totem.key]</strong>
+<br />
+<img src="https://media.giphy.com/media/gKsJUddjnpPG0/giphy.gif" />
+</center>
+
+<hr />
 
 <h1 id="subject">Subject:</h1>
 
@@ -184,13 +190,26 @@ hundreds of computers, in this case, the program will affect a ‘small’ part 
 
 <p>The program was developed using the <strong>Python</strong> programming language and testing was performed in a docker container to avoid risks.</p>
 
-<p>To encrypt the files, the Python <strong>cryptography</strong> module was used, which implements <strong>Fernet</strong> that uses the <strong>AES</strong> encryption algorithm.</p>
+<p>To encrypt the files, the Python <strong>cryptography</strong> module was used, which implements <a href="https://cryptography.io/en/latest/fernet/"><strong>Fernet</strong></a> that uses the <a href="https://es.wikipedia.org/wiki/Advanced_Encryption_Standard"><strong>AES</strong></a> encryption algorithm.</p>
 
 <blockquote>
 The <strong>Advanced Encryption Standard</strong>, abbreviated to AES, is used to encrypt data and protect it against unauthorized access. The cryptographic method uses a key of varying length for this purpose and is called <strong>AES-128, AES-192 or AES-256</strong>, depending on the key length used.
 <br />
 It is one of the most secure encryption methods, used publicly and privately by companies, organizations and governments such as the <strong>NSA</strong>.
 </blockquote>
+
+<p>The software <strong>scans the /infection directory</strong> and all subdirectories within it for files matching the extensions to be encrypted. The result of the search is a list of target files and then it proceeds to <strong>encrypt</strong> each of them.</p>
+
+<p>When the <strong>decryption</strong> option is executed, a scan of the same path will also be performed in search of files that have been previously encrypted and have <strong>not been modified by the user</strong>, and then decrypted one by one.</p>
+
+<center>
+<img src="https://media.giphy.com/media/P7PmvHY6kzAqY/giphy.gif" />
+</center>
+<p><br /></p>
+
+<p>To really see the speed and power of the tool it is recommended to use the ‘<strong>–silent</strong>’ parameter, which does not generate any output.</p>
+
+<hr />
 
 <h1 id="script-options">Script Options</h1>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default mode - Encrypt files
@@ -205,6 +224,7 @@ It is one of the most secure encryption methods, used publicly and privately by 
 - ./stockholm -h
 </code></pre></div></div>
 <p><br /></p>
+
 <h1 id="docker-test">Docker test</h1>
 <ul>
   <li>Install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> and run the app.</li>
@@ -234,8 +254,15 @@ cd out; ./stockholm
   </li>
 </ul>
 
-<hr />
+<center>
+<img src="https://media.giphy.com/media/8EmeieJAGjvUI/giphy.gif" />
+</center>
 
+<p><strong>Enjoy it!</strong></p>
+
+<p>View the source code <a href="https://github.com/goldcod3/Stockholm">here</a></p>
+
+<hr />
 <p><strong>Project completed</strong></p>
 
 <p><strong>Rating:</strong>
