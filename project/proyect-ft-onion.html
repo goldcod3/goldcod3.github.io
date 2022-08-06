@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ft_onion - 42Madrid</title>
+  <meta name='description' content='Portfolio of a Developer.'>
+
+  <link rel="canonical" href="http://localhost:6060/project/proyect-ft-onion">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ft_onion - 42Madrid – Daniel">
+  <meta name="twitter:description" content="This is a project developed in the cybersecurity bootcamp of 42Madrid.
+">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/kE54wc0PNxtVJeARb5/giphy.gif">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Ft_onion - 42Madrid – Daniel">
+  <meta property="og:description" content="This is a project developed in the cybersecurity bootcamp of 42Madrid.
+">
+  <meta property="og:image" content="https://media.giphy.com/media/kE54wc0PNxtVJeARb5/giphy.gif">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+<body>
+
+    
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            <img class="logo__image" src="/images/ico_skull_yellow.png" alt="Daniel">
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">HOME</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/projects/" class="nav__link">PROYECTS</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">BLOG</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">CONTACT</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/goldcod3" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/goldcod3" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://linkedin.com/in/luisdanielgo" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://instagram.com/goldcod3" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+    <div class="container">
+
+  <!--bookshop-live name(page-heading/page-heading.jekyll.html) params(title=page.title description=page.subtitle) context() -->
+          
+<div class="container">
+  <div class="c-page-heading">
+    <h1 class="c-page-heading__title">Ft_onion - 42Madrid</h1>
+    
+      <p class="c-page-heading__description">Web Hidden Server.</p>
+    
+  </div>
+</div>
+          <!--bookshop-live end-->
+  
+  <!--bookshop-live name(page-image/page-image.jekyll.html) params(image=page_image) context() -->
+          
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="c-page-image animate">
+        <img loading="lazy" src="https://media.giphy.com/media/kE54wc0PNxtVJeARb5/giphy.gif" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+          <!--bookshop-live end-->
+
+  <div class="page animate">
+    <p>This is a project developed in the cybersecurity bootcamp of 42Madrid.</p>
+
+<h2 id="subject">Subject:</h2>
+<p>The purpose of the project is to develop a server with two hidden services in the <strong>Tor</strong> network..</p>
+<ul>
+  <li>1 hidden service <strong>HTTP</strong></li>
+  <li>
+    <p>1 hidden service <strong>SSH</strong></p>
+  </li>
+  <li>The <strong>HTTP</strong> service must have a static web site with a single <strong><em>index.html</em></strong> file and will only be accessible
+from a url xxxxxxxxxxxxxxxx.onion.</li>
+  <li>A <strong>Nginx</strong> service will be used to configure the web server.</li>
+  <li>The page can be accessed via <strong>HTTP</strong> through port <strong>80</strong>.</li>
+  <li>The access to the server via <strong>SSH</strong> on port <strong>4242</strong> must be enabled.</li>
+  <li>No other ports should be opened and no firewall rules should be set.</li>
+</ul>
+
+<h3 id="files-to-submit">Files to submit:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>index.html
+nginx.conf
+sshd_config
+torrc
+</code></pre></div></div>
+<hr />
+
+<h2 id="proyect">Proyect:</h2>
+<p>This project was developed with docker containers to perform all the connection and configuration tests,
+without damaging the system. It has a <strong>Server</strong> container and a <strong>Client</strong> container.</p>
+<ul>
+  <li>The Server executes the necessary services and configurations.</li>
+  <li>The Client was created to perform SSH connection tests to the configured hidden service.</li>
+</ul>
+
+<p>When the Server container is run, the files with the configuration of each service are copied, the services are enabled and the xxxxxxxxx.onion urls for the HTTP and SSH service are the xxxxxxxxx.onion urls will be generated for the HTTP and SSH service, according to the configurations previously made in the requested files.</p>
+
+<h3 id="directory-structure">Directory Structure:</h3>
+
+<ul>
+  <li>DIRECTORY: ft_onion
+    <ul>
+      <li>DIRECTORY: src
+        <ul>
+          <li>DIRECTORY: url</li>
+          <li>FILE: dockerfile</li>
+          <li>FILE: index.html</li>
+          <li>FILE: sshd_config</li>
+          <li>FILE: nginx.conf</li>
+          <li>FILE: torrc</li>
+        </ul>
+      </li>
+      <li>DIRECTORY: cli
+        <ul>
+          <li>FILE: dockerfile</li>
+        </ul>
+      </li>
+      <li>FILE: Makefile</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="server">Server</h3>
+<p><strong>Services</strong>:</p>
+<ul>
+  <li><strong>Nginx</strong> web server [port 80:80].</li>
+  <li><strong>Openssh-server</strong> service (Server) [port 4242:4242].</li>
+  <li><strong>Tor</strong> hidden service.</li>
+</ul>
+
+<h3 id="client">Client</h3>
+<p><strong>Service</strong>:</p>
+<ul>
+  <li><strong>Ssh</strong> service (Client).</li>
+  <li><strong>Tor</strong> service (Client).</li>
+</ul>
+
+<hr />
+
+<h2 id="environment-execution">Environment Execution</h2>
+
+<h3 id="dependencies">Dependencies:</h3>
+<ul>
+  <li>You must have <a href="https://www.docker.com/products/docker-desktop/"><strong>Docker Desktop</strong></a> and <strong>make</strong> [optional] installed on your computer.</li>
+  <li>You must also have <a href="https://www.torproject.org/es/download"><strong>Tor</strong></a> browser installed for the HTTP test.</li>
+</ul>
+
+<h4 id="dokerfile-server"><strong>Dokerfile Server</strong>:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM debian:latest
+
+# Installation packages
+RUN apt-get update -y &amp;&amp; apt upgrade -y
+RUN apt-get install nginx tor openssh-server vim -y
+
+# Copy sshd_config file
+COPY sshd_config /etc/ssh/sshd_config
+
+# Copy torrc file
+COPY torrc /etc/tor/torrc
+
+# Copy index.html file
+COPY index.html /usr/share/nginx/html/index.html
+
+# COPY nginx file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# SSH user configuration
+RUN useradd -m sshusr
+RUN echo "sshusr:onion" | chpasswd
+
+# Service startup.
+ENTRYPOINT service ssh start; nginx; tor  
+</code></pre></div></div>
+<p><br /></p>
+<h4 id="dokerfile-client"><strong>Dokerfile Client</strong>:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM debian:latest
+
+# Installation packages
+RUN apt-get update -y &amp;&amp; apt-get upgrade -y
+RUN apt-get install tor ssh -y
+
+# Service startup.
+ENTRYPOINT service ssh start; tor
+</code></pre></div></div>
+<p><br />
+To facilitate the execution and creation of the images and containers with docker, a <strong>Makefile</strong> with the following 
+instructions was generated a <strong>Makefile</strong> with the following instructions:</p>
+
+<p><strong>Makefile</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I_SERVER = img_server
+I_CLIENT = img_client
+
+S_NAME = ft_onion
+C_NAME = ft_debian
+
+S_DIR = srv
+C_DIR = cli
+
+V_DIR = $(PWD)/srv/url:/var/lib/tor/
+
+all: server client
+	@echo "*--&gt; Containers Sucess Running &lt;--*"
+
+server:
+	@docker build -t $(I_SERVER) $(S_DIR)/.
+	@docker rm -fv $(S_NAME) &amp;&amp; docker run -d -v $(V_DIR) -p 80:80 -p 4242:4242 --name $(S_NAME) $(I_SERVER)
+	@echo "*--&gt; Server Sucess Running &lt;--*"
+
+client:
+	@docker build -t $(I_CLIENT) $(C_DIR)/.
+	@docker rm -fv $(C_NAME) &amp;&amp; docker run -d --name $(C_NAME) $(I_CLIENT)
+	@echo "*--&gt; Client Sucess Running &lt;--*"
+
+exe: client
+	@docker exec -it $(C_NAME) bash
+
+clean:
+	@docker rm -fv $(S_NAME) &amp;&amp; docker rm -fv $(C_NAME)
+	@echo "*--&gt; Containers Stoped and Deleted &lt;--*"
+</code></pre></div></div>
+<p><br />
+When executing the server a Volume is generated in the Server container, this will return the directories where the <strong>hostname</strong> files are located.
+hostname** files are located, in them we get the url’s xxxxxxx.onion to use.</p>
+
+<p><strong>Options of Makefile</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- make:        Generates the Server container, the Client container and both images.
+- make server: Generates the Server container image.
+- make client: Generates the image of the Client container.
+- make exe:    Runs the Client container and returns a Bash.
+- make clean:  Stops and removes the Server and Client containers. 
+</code></pre></div></div>
+<p><br />
+<strong>Configuration files</strong>:
+When the Server container image is created, the configuration files are copied allowing you to start up all the necessary services.
+In the Dockerfile of the Server you can see the paths that each file must have.</p>
+
+<h3 id="execution-instructions">Execution Instructions:</h3>
+<ol>
+  <li>Clone the repository
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/goldcod3/Ft_onion.git
+</code></pre></div>    </div>
+  </li>
+  <li>Run <strong>make</strong> inside the cloned repository.</li>
+  <li>The Server container generates in the <strong>srv/url</strong> directory the HTTP and SSH urls for the hidden tor services.</li>
+</ol>
+
+<p><strong>Access to the Services:</strong></p>
+<ul>
+  <li>To access the <strong>HTTP</strong> service, you must run the Tor browser and enter the url found in <strong>srv/url/hidden_service/hostname</strong>
+in the repository folder.</li>
+  <li>To access the <strong>SSH</strong> service run the Client container and inside the container run the command:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torify ssh sshusr@xxxxxxxxxxx.onion -p 4242
+</code></pre></div></div>
+<p><br />
+Where:</p>
+<ul>
+  <li>The user’s name is [sshusr].</li>
+  <li>The user’s password is [onion]</li>
+  <li>The port of the SSH connection is [4242].</li>
+  <li>The url xxxxxxxxxxxxxxx.onion is located in <strong>srv/url/other_hidden_service/hostname</strong> within the repository.</li>
+</ul>
+
+<hr />
+<p><strong>Project completed</strong></p>
+
+<p><strong>Rating:</strong>
+<img src="https://badge42.vercel.app/api/v2/cl4osmqtg006109jvtxcd7k3u/project/2661741" alt="lgomes-o's 42 ft_onion Score" /></p>
+
+  </div>
+
+  
+
+</div>
+
+
+    <!-- 
+        Bookshop components are accessed using the bookshop tag, 
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/goldcod3" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/goldcod3" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://linkedin.com/in/luisdanielgo" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://instagram.com/goldcod3" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+        </ul>
+
+        <div class="copyright"><p> 2022 - goldcod3 </p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>
