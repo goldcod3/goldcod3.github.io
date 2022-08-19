@@ -47,7 +47,7 @@
         <div class="logo">
           <a class="logo__link" href="/">
           
-            <img class="logo__image" src="/images/ico_skull_yellow.png" alt="Daniel">
+            <img class="logo__image" src="/resources/images/ico_skull_yellow.png" alt="Daniel">
           
           </a>
         </div>
@@ -72,7 +72,7 @@
               
                 
                 <li class="nav__item">
-                  <a href="/projects/" class="nav__link">PROYECTS</a>
+                  <a href="/projects/" class="nav__link">PROJECTS</a>
                 </li>
                 
               
@@ -84,7 +84,7 @@
               
                 
                 <li class="nav__item">
-                  <a href="/about/" class="nav__link">CONTACT</a>
+                  <a href="/about/" class="nav__link">ABOUT</a>
                 </li>
                 
               
@@ -176,7 +176,7 @@ A little-known use of Tor is anonymous access to the <strong>Deep Web or Darknet
 
 <h3 id="requirements">Requirements:</h3>
 <ul>
-  <li>The <strong>HTTP</strong> service must have a static web site with a single <strong><em>index.html</em></strong> file and will only be accessible from a url xxxxxxxxxxxxxxxx.onion.</li>
+  <li>The <strong>HTTP</strong> service must have a static web site with a single <strong><em>index.html</em></strong> file and will only be accessible from a url xxxxxxxxx.onion.</li>
   <li>A <strong>Nginx</strong> service will be used to configure the web server.</li>
   <li>The page can be accessed via <strong>HTTP</strong> through port <strong>80</strong>.</li>
   <li>The access to the server via <strong>SSH</strong> on port <strong>4242</strong> must be enabled.</li>
@@ -198,7 +198,7 @@ torrc
 
 <hr />
 
-<h1 id="proyect">Proyect:</h1>
+<h1 id="project">Project:</h1>
 <p>This project was developed with <a href="https://www.docker.com/">docker</a> containers to perform all the connection and configuration tests,
 without damaging the system. It has a <strong>Server</strong> container and a <strong>Client</strong> container.</p>
 <ul>
@@ -331,7 +331,7 @@ ENTRYPOINT service ssh start; tor
   <li>To access the <strong>HTTP</strong> service, you must run the <strong>Tor browser</strong> and enter the url found in <strong>srv/url/hidden_service/hostname</strong>
 in the repository folder.</li>
   <li>To access the <strong>SSH</strong> service run the Client container and inside the container run the command:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torify ssh sshusr@xxxxxxxxxxx.onion -p 4242
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torify ssh sshusr@xxxxxxxxx.onion -p 4242
 </code></pre></div>    </div>
     <p>Where:</p>
     <ul>
