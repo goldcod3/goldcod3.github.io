@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Basics Linux</title>
+  <meta name='description' content='Discover help commands for working with the terminal in linux.'>
+
+  <link rel="canonical" href="http://localhost:6060/blog/basic-linux-commands">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Basics Linux – Daniel">
+  <meta name="twitter:description" content="Discover help commands for working with the terminal in linux.">
+  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-linux.png">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Basics Linux – Daniel">
+  <meta property="og:description" content="Discover help commands for working with the terminal in linux.">
+  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-linux.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+<body>
+
+    
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            <img class="logo__image" src="/resources/images/ico_skull_yellow.png" alt="Daniel">
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">HOME</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/projects/" class="nav__link">PROJECTS</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">BLOG</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">ABOUT</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/goldcod3" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/goldcod3" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://linkedin.com/in/luisdanielgo" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://instagram.com/goldcod3" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Linux">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/linux" class="post-tags__tag">Linux</a>
+            
+              <a href="/tag/guide" class="post-tags__tag">Guide</a>
+            
+              <a href="/tag/basics" class="post-tags__tag">Basics</a>
+            
+          </div>
+          
+
+
+          <h1 class="post__title">Basics Linux</h1>
+
+          <div class="post__meta">
+            <div class="post__author-image">
+              <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
+            </div>
+
+            <div class="post__meta-bottom">
+              <div class="post__author">goldcod3</div>
+              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>A Linux-based system is a modular <strong>Unix-like operating system</strong>, deriving much of its basic design from principles established in Unix during the 1970s and 1980s.</p>
+
+<blockquote>
+  <p><strong>Linus Benedict Torvalds</strong> is a software engineer, known for initiating and maintaining the development of the <strong>Linux Kernel</strong>, based on the free operating system <a href="https://en.wikipedia.org/wiki/Minix">Minix</a> created by Andrew S. Tanenbaum and on some tools, various utilities and compilers developed by the <a href="https://en.wikipedia.org/wiki/GNU"><strong>GNU</strong></a> project. He is currently responsible for the coordination of the project. He has also developed the version control software <strong>Git</strong>.</p>
+</blockquote>
+
+<p>Linux allows a user to control every aspect of the operating system, is an <strong>open-source</strong> system and it allows a user to <strong>modify its source code</strong> (even source code of applications) itself as per the user requirements. Linux allows the user to install only the desired software nothing else.</p>
+
+<p><img src="https://media.giphy.com/media/SmaYvew52UlC9MmB6l/giphy.gif" alt="Linux" width="1200" height="900" /></p>
+
+<h2 id="design">Design</h2>
+
+<p>Such a system uses a monolithic kernel, the Linux kernel, which handles <strong>process control, networking, access to the peripherals, and file systems</strong>. Device drivers are either integrated directly with the kernel, or added as modules that are loaded while the system is running. The Project’s implementation of the <strong>C library</strong> works as a wrapper for the <strong>system calls</strong> of the Linux kernel necessary to the kernel-userspace interface, the <strong>toolchain</strong> is a broad collection of programming tools vital to Linux development (including the compilers used to build the Linux kernel itself), and the <strong>coreutils</strong> implement many basic <strong>Unix tools</strong>. The project also develops <strong>Bash</strong>, a popular CLI shell. The graphical user interface (or GUI) used by most Linux systems is built on top of an implementation of the <strong>X11 Window System</strong>.</p>
+
+<table>
+  <tr>
+    <td>
+      <center><p><strong>User mode</strong></p></center>
+    </td>
+    <td>
+      <center><p>
+      User applications<br />
+      System components<br />
+      C standard library
+      </p></center>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <center><p><strong>Kernel Mode</strong></p></center>
+    </td>
+    <td>
+      <center><p>Linux kernel</p></center>
+    </td>
+  </tr>
+  </table>
+<table>
+  <tr>
+    <td>
+      <center><p><strong>Hardware</strong> (CPU, main memory, data storage devices, etc.)</p></center>
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <p>GNU/Linux operating systems can run in both <strong>graphical and console mode</strong>, since the graphical environment is not explicitly linked to the rest of the system management programs and can be used optionally. The console is common in server distributions, while the <strong>graphical interface is oriented to the end user, both home and business</strong>. The most popular desktops in Linux are: <strong>GNOME, KDE Plasma, LXQt, Xfce, MATE and Cinnamon</strong>, although there are many more,</p>
+</blockquote>
+
+<h2 id="distributions">Distributions</h2>
+
+<p><img src="/resources/posts/unix-time.png" alt="Unix Timeline" width="1200" height="900" /></p>
+
+<p>A Linux distribution is a software distribution based on the Linux kernel that includes software packages to meet the needs of a specific group of users, giving rise to home, enterprise and server editions. The most famous distribution is <strong>Ubuntu</strong>, which has been one of those that have made Linux famous in the world and comparable to other systems such as <strong>Windows or MacOS</strong>, but Ubuntu would not exist without <strong>Debian</strong>, one of the oldest and largest distributions from which <a href="https://en.wikipedia.org/wiki/Canonical_(company)">Canonical</a> was based to develop Ubuntu.</p>
+
+<h2 id="main-gnulinux-distributions"><strong>Main GNU/Linux distributions</strong>:</h2>
+
+<center>
+  <table>
+    <tr>
+      <td>
+        <center>
+        <img src="/resources/images/logos/ubuntux64.png" />
+        <a href="https://ubuntu.com/download">
+        <h4>Ubuntu</h4></a>
+        </center>
+      </td>
+      <td>
+        <center>
+        <img src="/resources/images/logos/debianx64.png" />
+        <a href="https://www.debian.org/distrib/">
+        <h4>Debian</h4></a>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <center>
+        <img src="/resources/images/logos/fedorax64.png" />
+        <a href="https://getfedora.org/es/workstation/download/">
+        <h4>Fedora</h4></a>
+        </center>
+      </td>
+      <td>
+        <center>
+        <img src="/resources/images/logos/manjarox64.png" />
+        <a href="https://manjaro.org/download/">
+        <h4>Manjaro</h4></a>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <center>
+        <img src="/resources/images/logos/kalix64.png" />
+        <a href="https://www.kali.org/get-kali/">
+        <h4>Kali</h4></a>
+        </center>
+      </td>
+      <td>
+        <center>
+        <img src="/resources/images/logos/archx64.png" />
+        <a href="https://archlinux.org/download/">
+        <h4>ArchLinux</h4></a>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <center>
+        <img src="/resources/images/logos/parrotx64.png" />
+        <a href="https://www.parrotsec.org/download/">
+        <h4>Parrot</h4></a>
+        </center>
+      </td>
+      <td>
+        <center>
+        <img src="/resources/images/logos/osusex64.png" />
+        <a href="https://get.opensuse.org/">
+        <h4>OpenSUSE</h4></a>
+        </center>
+      </td>
+    </tr>
+  </table>
+</center>
+
+    </div>
+
+    <!--<div class="post__share">
+  <div class="share__head">
+    <div class="share__title">Share this Post</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=Basics%20Linux&url=http://localhost:6060/blog/basic-linux-commands"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basic-linux-commands"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__pinterest"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basic-linux-commands&amp;media=http://localhost:6060/resources/posts/basics-linux.png&amp;description=Basics%20Linux"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basic-linux-commands&title=Basics%20Linux&summary=Discover%20help%20commands%20for%20working%20with%20the%20terminal%20in%20linux.&source=Daniel"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>-->
+
+  </article>
+</div>
+<!-- end post -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/blog/basics-git">
+    <div class="prev__image">
+      <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Linux">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Basics Git</h2>
+    </div>
+  </a>
+  
+
+  
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tags#Linux" class="section__link related-tag">See all<span> Linux</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+
+              <div class="article col col-4 col-d-6 col-t-12">
+                <div class="article__inner">
+              
+                  
+                  <div class="image-wrap">
+                    <a class="article__image" href="/blog/basics-git">
+                      <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Git">
+                    </a>
+                  </div>
+                  
+              
+                  <div class="article__content">
+              
+                    
+                    <div class="article-tags__box">
+                      
+                      <a href="/tag/git" class="article__tag">Git</a>
+                      
+                      <a href="/tag/guide" class="article__tag">Guide</a>
+                      
+                      <a href="/tag/basics" class="article__tag">Basics</a>
+                      
+                    </div>
+                    
+              
+                    <h2 class="article__title">
+                      <a href="/blog/basics-git">Basics Git</a>
+                    </h2>
+              
+                    <p class="article__excerpt">
+                      What is Git? Know the tool and its basic commands.
+                    </p>
+              
+                    <div class="article__meta">
+                      <div class="article__author-image">
+                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
+                      </div>
+                      <div class="article-info">
+                        <div class="article__author-name">goldcod3</div>
+                        <span class="article__date"><time datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time></span>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            
+                
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+
+
+    <!-- 
+        Bookshop components are accessed using the bookshop tag, 
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/goldcod3" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/goldcod3" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://linkedin.com/in/luisdanielgo" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://instagram.com/goldcod3" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+        </ul>
+
+        <div class="copyright"><p> 2022 - goldcod3 </p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>
