@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Linux</title>
-  <meta name='description' content='Discover help commands for working with the terminal in linux.'>
+  <title>Debian vs CentOS</title>
+  <meta name='description' content='Main diferences of Debian and CentOS.'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basic-linux-commands">
+  <link rel="canonical" href="http://localhost:6060/blog/debianvscentos">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Linux – Daniel">
-  <meta name="twitter:description" content="Discover help commands for working with the terminal in linux.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-linux.png">
+  <meta name="twitter:title" content="Debian vs CentOS – Daniel">
+  <meta name="twitter:description" content="Main diferences of Debian and CentOS.">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Linux – Daniel">
-  <meta property="og:description" content="Discover help commands for working with the terminal in linux.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-linux.png">
+  <meta property="og:title" content="Debian vs CentOS – Daniel">
+  <meta property="og:description" content="Main diferences of Debian and CentOS.">
+  <meta property="og:image" content="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Linux">
+          <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Debian vs CentOS">
         </div>
       </div>
       
@@ -147,15 +147,17 @@
             
               <a href="/tag/linux" class="post-tags__tag">Linux</a>
             
-              <a href="/tag/guide" class="post-tags__tag">Guide</a>
+              <a href="/tag/debian" class="post-tags__tag">Debian</a>
             
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
+              <a href="/tag/centos" class="post-tags__tag">Centos</a>
+            
+              <a href="/tag/guide" class="post-tags__tag">Guide</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Linux</h1>
+          <h1 class="post__title">Debian vs CentOS</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +166,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-02T16:01:35+02:00">02 Aug 2022</time>
             </div>
           </div>
 
@@ -180,130 +182,58 @@
   <article class="post">
 
     <div class="post__content">
-      <p>A Linux-based system is a modular <strong>Unix-like operating system</strong>, deriving much of its basic design from principles established in Unix during the 1970s and 1980s.</p>
+      <h1 id="debian-vs-centos">Debian vs CentOS</h1>
 
-<blockquote>
-  <p><strong>Linus Benedict Torvalds</strong> is a software engineer, known for initiating and maintaining the development of the <strong>Linux Kernel</strong>, based on the free operating system <a href="https://en.wikipedia.org/wiki/Minix">Minix</a> created by Andrew S. Tanenbaum and on some tools, various utilities and compilers developed by the <a href="https://en.wikipedia.org/wiki/GNU"><strong>GNU</strong></a> project. He is currently responsible for the coordination of the project. He has also developed the version control software <strong>Git</strong>.</p>
-</blockquote>
+<p>As we mentioned in the [Basic Linux] post, there are many distributions for this operating system, this time we will compare two of them that are mainly used in enterprise <strong>Debian</strong> and <strong>CentOS</strong>.</p>
 
-<p>Linux allows a user to control every aspect of the operating system, is an <strong>open-source</strong> system and it allows a user to <strong>modify its source code</strong> (even source code of applications) itself as per the user requirements. Linux allows the user to install only the desired software nothing else.</p>
+<h2 id="debian"><a href="https://www.debian.org/index.en.html"><strong>Debian</strong></a></h2>
+<p>There are many reasons why users choose Debian as their operating system whether as a user, for development, or even in corporate environments. This distribution <strong>runs on numerous architectures and devices</strong>, and offers a public issue tracking system and other tools for development.</p>
 
-<p><img src="https://media.giphy.com/media/SmaYvew52UlC9MmB6l/giphy.gif" alt="Linux" width="1200" height="900" /></p>
-
-<h2 id="design">Design</h2>
-
-<p>Such a system uses a monolithic kernel, the Linux kernel, which handles <strong>process control, networking, access to the peripherals, and file systems</strong>. Device drivers are either integrated directly with the kernel, or added as modules that are loaded while the system is running. The Project’s implementation of the <strong>C library</strong> works as a wrapper for the <strong>system calls</strong> of the Linux kernel necessary to the kernel-userspace interface, the <strong>toolchain</strong> is a broad collection of programming tools vital to Linux development (including the compilers used to build the Linux kernel itself), and the <strong>coreutils</strong> implement many basic <strong>Unix tools</strong>. The project also develops <strong>Bash</strong>, a popular CLI shell. The graphical user interface (or GUI) used by most Linux systems is built on top of an implementation of the <strong>X11 Window System</strong>.</p>
-
-<table>
-  <tr>
-    <td>
-      <center><p><strong>User mode</strong></p></center>
-    </td>
-    <td>
-      <center><p>
-      User applications<br />
-      System components<br />
-      C standard library
-      </p></center>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <center><p><strong>Kernel Mode</strong></p></center>
-    </td>
-    <td>
-      <center><p>Linux kernel</p></center>
-    </td>
-  </tr>
-  </table>
-<table>
-  <tr>
-    <td>
-      <center><p><strong>Hardware</strong> (CPU, main memory, data storage devices, etc.)</p></center>
-    </td>
-  </tr>
-</table>
-
-<blockquote>
-  <p>GNU/Linux operating systems can run in both <strong>graphical and console mode</strong>, since the graphical environment is not explicitly linked to the rest of the system management programs and can be used optionally. The console is common in server distributions, while the <strong>graphical interface is oriented to the end user, both home and business</strong>. The most popular desktops in Linux are: <strong>GNOME, KDE Plasma, LXQt, Xfce, MATE and Cinnamon</strong>, although there are many more,</p>
-</blockquote>
-
-<h2 id="distributions">Distributions</h2>
-
-<p><img src="/resources/posts/unix-time.png" alt="Unix Timeline" width="1200" height="900" /></p>
-
-<p>A Linux distribution is a software distribution based on the Linux kernel that includes software packages to meet the needs of a specific group of users, giving rise to home, enterprise and server editions. The most famous distribution is <strong>Ubuntu</strong>, which has been one of those that have made Linux famous in the world and comparable to other systems such as <strong>Windows or MacOS</strong>, but Ubuntu would not exist without <strong>Debian</strong>, one of the oldest and largest distributions from which <a href="https://en.wikipedia.org/wiki/Canonical_(company)">Canonical</a> was based to develop Ubuntu.</p>
-
-<h2 id="main-gnulinux-distributions"><strong>Main GNU/Linux distributions</strong>:</h2>
+<p>Debian is made with <a href="https://www.debian.org/intro/free"><strong>free software</strong></a> and is <strong>open source</strong>, anyone can use, modify and distribute it. It is considered a stable and secure system available for multiple devices such as laptops, desktops and servers, being supported by the <strong>Linux kernel</strong> it has an extensive hardware support.</p>
 
 <center>
-  <table>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/ubuntux64.png" />
-        <a href="https://ubuntu.com/download">
-        <h4>Ubuntu</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/debianx64.png" />
-        <a href="https://www.debian.org/distrib/">
-        <h4>Debian</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/fedorax64.png" />
-        <a href="https://getfedora.org/es/workstation/download/">
-        <h4>Fedora</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/manjarox64.png" />
-        <a href="https://manjaro.org/download/">
-        <h4>Manjaro</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/kalix64.png" />
-        <a href="https://www.kali.org/get-kali/">
-        <h4>Kali</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/archx64.png" />
-        <a href="https://archlinux.org/download/">
-        <h4>ArchLinux</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/parrotx64.png" />
-        <a href="https://www.parrotsec.org/download/">
-        <h4>Parrot</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/osusex64.png" />
-        <a href="https://get.opensuse.org/">
-        <h4>OpenSUSE</h4></a>
-        </center>
-      </td>
-    </tr>
-  </table>
+<img src="/resources/posts/debian-logo.jpg" height="200" />
 </center>
+<p><br /></p>
+
+<p>Debian offers a flexible <a href="https://cdimage.debian.org/images/release/current-live/amd64/iso-hybrid/"><strong>installer</strong></a> so that anyone who wants to try it out will be able to install it, being easy to update and maintain by any type of user. The Debian project is considered a community composed of more than <strong>60 countries</strong> and translated in more than <strong>80 languages</strong>, in this community everyone has the same rights, it cannot be controlled by a single company and any user can belong to it, being indifferent if he is a person who programs or administers systems.</p>
+
+<p>This system includes a large number of <a href="https://www.debian.org/distrib/packages#view"><strong>packages</strong></a> that use the <strong>.deb</strong> format, allowing it to be the base of many other distributions such as <strong>Ubuntu, RedHat, Kali linux, Linux Mint, ParrotOS, among others</strong>.</p>
+
+<p>For any developer, Debian offers multiple <strong>CPU</strong> architectures such as ARM, amd64, i386, POWER7, IBM System z, among others, as well as for IoT devices such as Raspberry Pi, QNAP variants, mobile devices, routers, etc. Different versions of this distribution can be used for test environments or unstable versions to develop different packages and maintain them, it includes a <a href="https://www.debian.org/Bugs/"><strong>Bug Tracking System</strong></a> (BTS) publicly available through any browser.</p>
+
+<hr />
+
+<h2 id="centos"><a href="https://www.centos.org/"><strong>CentOS</strong></a></h2>
+<p>It is one of the most chosen Operating Systems when setting up a Linux server, it is the dominant one among the <strong>companies</strong> that provide hosting and server services. This is thanks to an excellent <strong>stability and security</strong>, supported by a community represented in manual forums and others that are constantly updated for the particularities of this operating system.</p>
+
+<center>
+<img src="/resources/posts/centos-logo.png" height="200" />
+</center>
+<p><br /></p>
+
+<p>CentOS runs only <strong>stable</strong> and basic scheduled <a href="https://wiki.centos.org/Download"><strong>versions</strong></a>, reducing the risk of system crashes, has the ability to process tasks faster and more efficiently than many other similar Linux distributions, is less prone to attacks, which is not to say that it is impossible, it is positioned among the best in terms of security. It has the full support of <strong>RedHat</strong>, and in addition to its engineers and large community of developers who keep it secure and always updated.</p>
+
+<p>Its main disadvantage is that it is a complex operating system for those who do not know Linux, which concludes in the need for administrators with <strong>advanced knowledge</strong> for optimal management and maintenance of the system, so I leave you the <a href="https://docs.centos.org/en-US/docs/"><strong>manuals</strong></a> of use of this incredible distribution.</p>
+
+<hr />
+
+<h2 id="debian-vs-centos-1"><strong>Debian vs CentOS</strong></h2>
+<h4 id="main-differences"><strong>Main Differences</strong></h4>
+<p>|Debian|CentOS|
+|–|–|
+|Supported by Debian individuals|Supported by the Red Hat community|
+|Debian uses the format package DEB with dpkg/APT|CentOS uses the format package RPM with YUM/DNF|
+|Default file system EXT4|Default file system XFS|
+|Debian lacks market presence due to its terminal end usage|CentOS has a large market due to its user-friendly nature|
+|Has multiple architecture support as compared to other distributions|Does not come with multiple architecture support|
+|New updates and upgrades usually take time, thus making it stable|It has a release cycle of 2 years, thus giving it enough time to fix bugs|
+|Debian comes with user-friendly applications and GUI|CentOS has a complicated GUI|
+|Debian has a vas amount of packages in its default repository to do something|CentOS has limited packages|</p>
+
+<p>In conclusion, any of these two distributions are incredible for working in Linux environments, it is advisable to start using Debian to acquire a broad level of knowledge in system administration and then work with distributions such as CentOS or Red Hat for enterprise environments!</p>
+
+<p><img src="/resources/posts/CentOS-vs-Debian.jpg" /></p>
 
     </div>
 
@@ -314,25 +244,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Linux&url=http://localhost:6060/blog/basic-linux-commands"
+        href="https://twitter.com/intent/tweet?text=Debian%20vs%20CentOS&url=http://localhost:6060/blog/debianvscentos"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basic-linux-commands"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/debianvscentos"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basic-linux-commands&amp;media=http://localhost:6060/resources/posts/basics-linux.png&amp;description=Basics%20Linux"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/debianvscentos&amp;media=http://localhost:6060https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif&amp;description=Debian%20vs%20CentOS"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basic-linux-commands&title=Basics%20Linux&summary=Discover%20help%20commands%20for%20working%20with%20the%20terminal%20in%20linux.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/debianvscentos&title=Debian%20vs%20CentOS&summary=Main%20diferences%20of%20Debian%20and%20CentOS.&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -349,25 +279,25 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-  <a class="post__prev" href="/blog/basics-git">
+  <a class="post__prev" href="/blog/basic-linux-commands">
     <div class="prev__image">
-      <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Linux">
+      <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Debian vs CentOS">
     </div>
     <div class="prev__box">
       <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Basics Git</h2>
+      <h2 class="post__nav__title">Basics Linux</h2>
     </div>
   </a>
   
 
   
-  <a class="post__next" href="/blog/debianvscentos">
+  <a class="post__next" href="/blog/access-control">
     <div class="next__box">
       <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Debian vs CentOS</h2>
+      <h2 class="post__nav__title">Access Control</h2>
     </div>
     <div class="next__image">
-      <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Basics Linux">
+      <img loading="lazy" src="https://media.giphy.com/media/bKj0qEKTVBdF2o5Dgn/giphy.gif" alt="Debian vs CentOS">
     </div>
   </a>
   
@@ -396,6 +326,8 @@
                 
                   
                     <a href="/tags#Linux" class="section__link related-tag">See all<span> Linux</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
                   
                 
                   

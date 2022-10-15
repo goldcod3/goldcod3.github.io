@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Linux</title>
-  <meta name='description' content='Discover help commands for working with the terminal in linux.'>
+  <title>AppArmor</title>
+  <meta name='description' content='Concepts and features of the AppArmor security tool.'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basic-linux-commands">
+  <link rel="canonical" href="http://localhost:6060/blog/apparmor">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Linux – Daniel">
-  <meta name="twitter:description" content="Discover help commands for working with the terminal in linux.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-linux.png">
+  <meta name="twitter:title" content="AppArmor – Daniel">
+  <meta name="twitter:description" content="Concepts and features of the AppArmor security tool.">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Linux – Daniel">
-  <meta property="og:description" content="Discover help commands for working with the terminal in linux.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-linux.png">
+  <meta property="og:title" content="AppArmor – Daniel">
+  <meta property="og:description" content="Concepts and features of the AppArmor security tool.">
+  <meta property="og:image" content="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Linux">
+          <img loading="lazy" src="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif" alt="AppArmor">
         </div>
       </div>
       
@@ -147,15 +147,17 @@
             
               <a href="/tag/linux" class="post-tags__tag">Linux</a>
             
-              <a href="/tag/guide" class="post-tags__tag">Guide</a>
+              <a href="/tag/security" class="post-tags__tag">Security</a>
             
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
+              <a href="/tag/debian" class="post-tags__tag">Debian</a>
+            
+              <a href="/tag/guide" class="post-tags__tag">Guide</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Linux</h1>
+          <h1 class="post__title">AppArmor</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +166,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-12T17:01:35+02:00">12 Aug 2022</time>
             </div>
           </div>
 
@@ -180,129 +182,66 @@
   <article class="post">
 
     <div class="post__content">
-      <p>A Linux-based system is a modular <strong>Unix-like operating system</strong>, deriving much of its basic design from principles established in Unix during the 1970s and 1980s.</p>
-
-<blockquote>
-  <p><strong>Linus Benedict Torvalds</strong> is a software engineer, known for initiating and maintaining the development of the <strong>Linux Kernel</strong>, based on the free operating system <a href="https://en.wikipedia.org/wiki/Minix">Minix</a> created by Andrew S. Tanenbaum and on some tools, various utilities and compilers developed by the <a href="https://en.wikipedia.org/wiki/GNU"><strong>GNU</strong></a> project. He is currently responsible for the coordination of the project. He has also developed the version control software <strong>Git</strong>.</p>
-</blockquote>
-
-<p>Linux allows a user to control every aspect of the operating system, is an <strong>open-source</strong> system and it allows a user to <strong>modify its source code</strong> (even source code of applications) itself as per the user requirements. Linux allows the user to install only the desired software nothing else.</p>
-
-<p><img src="https://media.giphy.com/media/SmaYvew52UlC9MmB6l/giphy.gif" alt="Linux" width="1200" height="900" /></p>
-
-<h2 id="design">Design</h2>
-
-<p>Such a system uses a monolithic kernel, the Linux kernel, which handles <strong>process control, networking, access to the peripherals, and file systems</strong>. Device drivers are either integrated directly with the kernel, or added as modules that are loaded while the system is running. The Project’s implementation of the <strong>C library</strong> works as a wrapper for the <strong>system calls</strong> of the Linux kernel necessary to the kernel-userspace interface, the <strong>toolchain</strong> is a broad collection of programming tools vital to Linux development (including the compilers used to build the Linux kernel itself), and the <strong>coreutils</strong> implement many basic <strong>Unix tools</strong>. The project also develops <strong>Bash</strong>, a popular CLI shell. The graphical user interface (or GUI) used by most Linux systems is built on top of an implementation of the <strong>X11 Window System</strong>.</p>
-
-<table>
-  <tr>
-    <td>
-      <center><p><strong>User mode</strong></p></center>
-    </td>
-    <td>
-      <center><p>
-      User applications<br />
-      System components<br />
-      C standard library
-      </p></center>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <center><p><strong>Kernel Mode</strong></p></center>
-    </td>
-    <td>
-      <center><p>Linux kernel</p></center>
-    </td>
-  </tr>
-  </table>
-<table>
-  <tr>
-    <td>
-      <center><p><strong>Hardware</strong> (CPU, main memory, data storage devices, etc.)</p></center>
-    </td>
-  </tr>
-</table>
-
-<blockquote>
-  <p>GNU/Linux operating systems can run in both <strong>graphical and console mode</strong>, since the graphical environment is not explicitly linked to the rest of the system management programs and can be used optionally. The console is common in server distributions, while the <strong>graphical interface is oriented to the end user, both home and business</strong>. The most popular desktops in Linux are: <strong>GNOME, KDE Plasma, LXQt, Xfce, MATE and Cinnamon</strong>, although there are many more,</p>
-</blockquote>
-
-<h2 id="distributions">Distributions</h2>
-
-<p><img src="/resources/posts/unix-time.png" alt="Unix Timeline" width="1200" height="900" /></p>
-
-<p>A Linux distribution is a software distribution based on the Linux kernel that includes software packages to meet the needs of a specific group of users, giving rise to home, enterprise and server editions. The most famous distribution is <strong>Ubuntu</strong>, which has been one of those that have made Linux famous in the world and comparable to other systems such as <strong>Windows or MacOS</strong>, but Ubuntu would not exist without <strong>Debian</strong>, one of the oldest and largest distributions from which <a href="https://en.wikipedia.org/wiki/Canonical_(company)">Canonical</a> was based to develop Ubuntu.</p>
-
-<h2 id="main-gnulinux-distributions"><strong>Main GNU/Linux distributions</strong>:</h2>
+      <h1 id="apparmor"><strong>AppArmor</strong></h1>
+<p>AppArmor is what is called a <strong>mandatory access control</strong> <a href="/blog/access-control">MAC</a> mechanism, it acts by establishing a series of restrictions on the resources that can be accessed by the different applications it controls. It was born as an external development promoted by Novell, and only distributions such as openSUSE or SUSE Linux Enterprise started benefiting from it. <strong>Today it is part of the Linux kernel</strong>, since Canonical proposed it for integration in the main branch, in version 2.6.36.</p>
 
 <center>
-  <table>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/ubuntux64.png" />
-        <a href="https://ubuntu.com/download">
-        <h4>Ubuntu</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/debianx64.png" />
-        <a href="https://www.debian.org/distrib/">
-        <h4>Debian</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/fedorax64.png" />
-        <a href="https://getfedora.org/es/workstation/download/">
-        <h4>Fedora</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/manjarox64.png" />
-        <a href="https://manjaro.org/download/">
-        <h4>Manjaro</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/kalix64.png" />
-        <a href="https://www.kali.org/get-kali/">
-        <h4>Kali</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/archx64.png" />
-        <a href="https://archlinux.org/download/">
-        <h4>ArchLinux</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/parrotx64.png" />
-        <a href="https://www.parrotsec.org/download/">
-        <h4>Parrot</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/osusex64.png" />
-        <a href="https://get.opensuse.org/">
-        <h4>OpenSUSE</h4></a>
-        </center>
-      </td>
-    </tr>
-  </table>
+<img src="/resources/posts/apparmor-logo.png" />
+</center>
+
+<p>Today it is integrated by default in most of the distributions, such as <strong>Ubuntu</strong>, which can be said to have integrated it practically since its beginnings, as well as all its derivatives, or <strong>Debian</strong>, which in this case has joined later, and has been enabled since Debian 10. Other distros such as Fedora or RHEL, do not come with it, but because traditionally they have always bet on <em>SELinux</em>, a system with a similar approach, although much more complex to manage.</p>
+
+<p>AppArmor is loaded, with all its profiles, in the kernel during the boot, if we want to verify that it is correctly enabled in the system we execute the following command, which will return <code class="language-plaintext highlighter-rouge">Yes</code> if it is active:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo aa-enabled
+</code></pre></div></div>
+
+<p>If we want to see more details of the status of this tool we execute:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo aa-status
+</code></pre></div></div>
+
+<p>AppArmor has specific profiles for each of the applications it controls, which would be the equivalent of SELinux policies. However, AppArmor’s profiles are significantly easier to understand and configure, resulting in a more user-friendly system. AppArmor does not have attributes like SELinux, and the way it recognizes a program is through its path. Thus, each AppArmor profile points to a specific path, and details what actions the executable behind this path is allowed to perform.</p>
+
+<h3 id="profiles">Profiles:</h3>
+<p>AppArmor profiles are loaded into the kernel itself during boot, and can be run in two main modes: <strong>enforce</strong> and <strong>complain</strong>.</p>
+<ul>
+  <li><strong>enforce</strong>: in this mode a forced enforcement of the defined policy is performed and any violation attempt is reported via syslog or auditd.</li>
+  <li><strong>complain</strong>: this mode does not enforce the policy, but reports any attempted violation.</li>
+</ul>
+
+<p>To switch the profile between <strong>enforce</strong> and <strong>complain</strong> we must install the <code class="language-plaintext highlighter-rouge">apparmor-utils</code> package:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install apparmor-utils
+</code></pre></div></div>
+
+<p>Each application is assigned an AppArmor profile; each implementation of this tool comes by default with a specific number of profiles, but more profiles are being added all the time. In addition, many applications, when installed, are already configured to create their own AppArmor profile. For applications that do not yet have a specific profile, you can create your own profile yourself, although you must take into account that if the program is not prepared, it is possible that it may present errors in its execution.</p>
+
+<p>To create a specific profile for an application, we do it by means of the command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo aa-genprof &lt;app-path&gt;
+</code></pre></div></div>
+<p>Where the <code class="language-plaintext highlighter-rouge">&lt;app-path&gt;</code> is the file path to the application that you want to profile. The default application folder is <code class="language-plaintext highlighter-rouge">/usr/bin</code>, but it could be different depending on the application.</p>
+
+<hr />
+<h3 id="profile-assignment">Profile Assignment:</h3>
+<p>To set a profile that is loaded in <em>complain</em> mode to be loaded in <em>enforce</em> mode, you can run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo aa-enforce &lt;profile-path&gt;
+</code></pre></div></div>
+
+<p>We can also change a profile from <em>enforce</em> mode to <em>complain</em> mode by executing:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo aa-complain &lt;profile-path&gt;
+</code></pre></div></div>
+
+<p>AppArmor profiles are usually located in the <code class="language-plaintext highlighter-rouge">etc/apparmor.d/</code> path,
+to see a list of all existing profiles we can run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ls /etc/apparmor.d
+</code></pre></div></div>
+
+<p>To examine a specific profile we can execute the command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo cat /etc/apparmor.d/&lt;profile-name&gt;
+</code></pre></div></div>
+
+<p>If you want more information about this amazing tool you can visit the <a href="https://apparmor.net/">official</a> page.</p>
+
+<center>
+<img src="https://media.giphy.com/media/Q61LJj43H48z1FIK4X/giphy-downsized-large.gif" />
 </center>
 
     </div>
@@ -314,25 +253,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Linux&url=http://localhost:6060/blog/basic-linux-commands"
+        href="https://twitter.com/intent/tweet?text=AppArmor&url=http://localhost:6060/blog/apparmor"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basic-linux-commands"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/apparmor"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basic-linux-commands&amp;media=http://localhost:6060/resources/posts/basics-linux.png&amp;description=Basics%20Linux"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/apparmor&amp;media=http://localhost:6060https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif&amp;description=AppArmor"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basic-linux-commands&title=Basics%20Linux&summary=Discover%20help%20commands%20for%20working%20with%20the%20terminal%20in%20linux.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/apparmor&title=AppArmor&summary=Concepts%20and%20features%20of%20the%20AppArmor%20security%20tool.&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -349,27 +288,17 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-  <a class="post__prev" href="/blog/basics-git">
+  <a class="post__prev" href="/blog/selinux">
     <div class="prev__image">
-      <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Linux">
+      <img loading="lazy" src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" alt="AppArmor">
     </div>
     <div class="prev__box">
       <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Basics Git</h2>
+      <h2 class="post__nav__title">SELinux</h2>
     </div>
   </a>
   
 
-  
-  <a class="post__next" href="/blog/debianvscentos">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Debian vs CentOS</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Basics Linux">
-    </div>
-  </a>
   
 </div>
     </div>
@@ -402,6 +331,8 @@
                 
                   
                 
+                  
+                
               
               </a>
             </div>
@@ -415,59 +346,6 @@
             
       
             
-
-              <div class="article col col-4 col-d-6 col-t-12">
-                <div class="article__inner">
-              
-                  
-                  <div class="image-wrap">
-                    <a class="article__image" href="/blog/apparmor">
-                      <img loading="lazy" src="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif" alt="AppArmor">
-                    </a>
-                  </div>
-                  
-              
-                  <div class="article__content">
-              
-                    
-                    <div class="article-tags__box">
-                      
-                      <a href="/tag/linux" class="article__tag">Linux</a>
-                      
-                      <a href="/tag/security" class="article__tag">Security</a>
-                      
-                      <a href="/tag/debian" class="article__tag">Debian</a>
-                      
-                      <a href="/tag/guide" class="article__tag">Guide</a>
-                      
-                    </div>
-                    
-              
-                    <h2 class="article__title">
-                      <a href="/blog/apparmor">AppArmor</a>
-                    </h2>
-              
-                    <p class="article__excerpt">
-                      Concepts and features of the AppArmor security tool.
-                    </p>
-              
-                    <div class="article__meta">
-                      <div class="article__author-image">
-                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
-                      </div>
-                      <div class="article-info">
-                        <div class="article__author-name">goldcod3</div>
-                        <span class="article__date"><time datetime="2022-08-12T17:01:35+02:00">12 Aug 2022</time></span>
-                      </div>
-                    </div>
-              
-                  </div>
-                </div>
-              </div>
-
-            
-                
-              
             
             
             
@@ -576,6 +454,66 @@
                       <div class="article-info">
                         <div class="article__author-name">goldcod3</div>
                         <span class="article__date"><time datetime="2022-08-05T10:01:35+02:00">05 Aug 2022</time></span>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            
+                
+              
+            
+            
+            
+      
+            
+      
+            
+
+              <div class="article col col-4 col-d-6 col-t-12">
+                <div class="article__inner">
+              
+                  
+                  <div class="image-wrap">
+                    <a class="article__image" href="/blog/debianvscentos">
+                      <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Debian vs CentOS">
+                    </a>
+                  </div>
+                  
+              
+                  <div class="article__content">
+              
+                    
+                    <div class="article-tags__box">
+                      
+                      <a href="/tag/linux" class="article__tag">Linux</a>
+                      
+                      <a href="/tag/debian" class="article__tag">Debian</a>
+                      
+                      <a href="/tag/centos" class="article__tag">Centos</a>
+                      
+                      <a href="/tag/guide" class="article__tag">Guide</a>
+                      
+                    </div>
+                    
+              
+                    <h2 class="article__title">
+                      <a href="/blog/debianvscentos">Debian vs CentOS</a>
+                    </h2>
+              
+                    <p class="article__excerpt">
+                      Main diferences of Debian and CentOS.
+                    </p>
+              
+                    <div class="article__meta">
+                      <div class="article__author-image">
+                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
+                      </div>
+                      <div class="article-info">
+                        <div class="article__author-name">goldcod3</div>
+                        <span class="article__date"><time datetime="2022-08-02T16:01:35+02:00">02 Aug 2022</time></span>
                       </div>
                     </div>
               

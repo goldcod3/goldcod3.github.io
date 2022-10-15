@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Linux</title>
-  <meta name='description' content='Discover help commands for working with the terminal in linux.'>
+  <title>Access Control</title>
+  <meta name='description' content='Main types of access controls that we can find in the systems.'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basic-linux-commands">
+  <link rel="canonical" href="http://localhost:6060/blog/access-control">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Linux – Daniel">
-  <meta name="twitter:description" content="Discover help commands for working with the terminal in linux.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-linux.png">
+  <meta name="twitter:title" content="Access Control – Daniel">
+  <meta name="twitter:description" content="Main types of access controls that we can find in the systems.">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/bKj0qEKTVBdF2o5Dgn/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Linux – Daniel">
-  <meta property="og:description" content="Discover help commands for working with the terminal in linux.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-linux.png">
+  <meta property="og:title" content="Access Control – Daniel">
+  <meta property="og:description" content="Main types of access controls that we can find in the systems.">
+  <meta property="og:image" content="https://media.giphy.com/media/bKj0qEKTVBdF2o5Dgn/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Linux">
+          <img loading="lazy" src="https://media.giphy.com/media/bKj0qEKTVBdF2o5Dgn/giphy.gif" alt="Access Control">
         </div>
       </div>
       
@@ -147,15 +147,15 @@
             
               <a href="/tag/linux" class="post-tags__tag">Linux</a>
             
-              <a href="/tag/guide" class="post-tags__tag">Guide</a>
+              <a href="/tag/access control" class="post-tags__tag">Access Control</a>
             
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
+              <a href="/tag/guide" class="post-tags__tag">Guide</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Linux</h1>
+          <h1 class="post__title">Access Control</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +164,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-05T10:01:35+02:00">05 Aug 2022</time>
             </div>
           </div>
 
@@ -180,130 +180,61 @@
   <article class="post">
 
     <div class="post__content">
-      <p>A Linux-based system is a modular <strong>Unix-like operating system</strong>, deriving much of its basic design from principles established in Unix during the 1970s and 1980s.</p>
+      <h1 id="access-control-policies"><strong>Access Control</strong> Policies</h1>
+<p>An <strong>access control policy</strong> specifies the access rights that regulate whether an access request made should be allowed or not. Access requests are made by what is called a <strong>principal</strong>, which can be: a <strong>user</strong> (human), a <strong>subject</strong> (a process running on behalf of a user) and an <strong>object</strong> (a data or a resource).</p>
 
-<blockquote>
-  <p><strong>Linus Benedict Torvalds</strong> is a software engineer, known for initiating and maintaining the development of the <strong>Linux Kernel</strong>, based on the free operating system <a href="https://en.wikipedia.org/wiki/Minix">Minix</a> created by Andrew S. Tanenbaum and on some tools, various utilities and compilers developed by the <a href="https://en.wikipedia.org/wiki/GNU"><strong>GNU</strong></a> project. He is currently responsible for the coordination of the project. He has also developed the version control software <strong>Git</strong>.</p>
-</blockquote>
-
-<p>Linux allows a user to control every aspect of the operating system, is an <strong>open-source</strong> system and it allows a user to <strong>modify its source code</strong> (even source code of applications) itself as per the user requirements. Linux allows the user to install only the desired software nothing else.</p>
-
-<p><img src="https://media.giphy.com/media/SmaYvew52UlC9MmB6l/giphy.gif" alt="Linux" width="1200" height="900" /></p>
-
-<h2 id="design">Design</h2>
-
-<p>Such a system uses a monolithic kernel, the Linux kernel, which handles <strong>process control, networking, access to the peripherals, and file systems</strong>. Device drivers are either integrated directly with the kernel, or added as modules that are loaded while the system is running. The Project’s implementation of the <strong>C library</strong> works as a wrapper for the <strong>system calls</strong> of the Linux kernel necessary to the kernel-userspace interface, the <strong>toolchain</strong> is a broad collection of programming tools vital to Linux development (including the compilers used to build the Linux kernel itself), and the <strong>coreutils</strong> implement many basic <strong>Unix tools</strong>. The project also develops <strong>Bash</strong>, a popular CLI shell. The graphical user interface (or GUI) used by most Linux systems is built on top of an implementation of the <strong>X11 Window System</strong>.</p>
-
-<table>
-  <tr>
-    <td>
-      <center><p><strong>User mode</strong></p></center>
-    </td>
-    <td>
-      <center><p>
-      User applications<br />
-      System components<br />
-      C standard library
-      </p></center>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <center><p><strong>Kernel Mode</strong></p></center>
-    </td>
-    <td>
-      <center><p>Linux kernel</p></center>
-    </td>
-  </tr>
-  </table>
-<table>
-  <tr>
-    <td>
-      <center><p><strong>Hardware</strong> (CPU, main memory, data storage devices, etc.)</p></center>
-    </td>
-  </tr>
-</table>
-
-<blockquote>
-  <p>GNU/Linux operating systems can run in both <strong>graphical and console mode</strong>, since the graphical environment is not explicitly linked to the rest of the system management programs and can be used optionally. The console is common in server distributions, while the <strong>graphical interface is oriented to the end user, both home and business</strong>. The most popular desktops in Linux are: <strong>GNOME, KDE Plasma, LXQt, Xfce, MATE and Cinnamon</strong>, although there are many more,</p>
-</blockquote>
-
-<h2 id="distributions">Distributions</h2>
-
-<p><img src="/resources/posts/unix-time.png" alt="Unix Timeline" width="1200" height="900" /></p>
-
-<p>A Linux distribution is a software distribution based on the Linux kernel that includes software packages to meet the needs of a specific group of users, giving rise to home, enterprise and server editions. The most famous distribution is <strong>Ubuntu</strong>, which has been one of those that have made Linux famous in the world and comparable to other systems such as <strong>Windows or MacOS</strong>, but Ubuntu would not exist without <strong>Debian</strong>, one of the oldest and largest distributions from which <a href="https://en.wikipedia.org/wiki/Canonical_(company)">Canonical</a> was based to develop Ubuntu.</p>
-
-<h2 id="main-gnulinux-distributions"><strong>Main GNU/Linux distributions</strong>:</h2>
+<p>We can classify access control policies into different types, each with its advantages and disadvantages:</p>
 
 <center>
-  <table>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/ubuntux64.png" />
-        <a href="https://ubuntu.com/download">
-        <h4>Ubuntu</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/debianx64.png" />
-        <a href="https://www.debian.org/distrib/">
-        <h4>Debian</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/fedorax64.png" />
-        <a href="https://getfedora.org/es/workstation/download/">
-        <h4>Fedora</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/manjarox64.png" />
-        <a href="https://manjaro.org/download/">
-        <h4>Manjaro</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/kalix64.png" />
-        <a href="https://www.kali.org/get-kali/">
-        <h4>Kali</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/archx64.png" />
-        <a href="https://archlinux.org/download/">
-        <h4>ArchLinux</h4></a>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <center>
-        <img src="/resources/images/logos/parrotx64.png" />
-        <a href="https://www.parrotsec.org/download/">
-        <h4>Parrot</h4></a>
-        </center>
-      </td>
-      <td>
-        <center>
-        <img src="/resources/images/logos/osusex64.png" />
-        <a href="https://get.opensuse.org/">
-        <h4>OpenSUSE</h4></a>
-        </center>
-      </td>
-    </tr>
-  </table>
+<img src="https://www.incibe-cert.es/extfrontinteco/img/Image/BLOG/2014Noviembre/Control_acceso/image004.jpg" />
 </center>
+
+<hr />
+<h3 id="discretionary-access-control-dac">Discretionary Access Control (DAC)</h3>
+<p>Discretionary access control is a method of restricting access to objects based on the identity of the subjects that intend to operate or access them. The most representative example is the permission mechanism established by the owner (user/group) of the subject. Thus, it is the owner of the object himself who determines which users and with which privileges access his objects. This access mechanism <strong>is present in most operating systems</strong>. In this type of access control it is common to use attributes (<strong>read, write, execute, etc.</strong>) to mark the permissions applied to the object.</p>
+
+<p>In the specific case of UNIX/Linux systems, system objects (files, directories, etc.) have read (<em>r</em>), write (<em>w</em>), and execute (<em>x</em>) attributes. These permissions are assigned by the owner user (user), for the group (group) and for third parties (others, non-owner and non-group users). With the <strong>ls -l</strong> command we can visualize the basic DAC permissions.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -l
+-rwxrw-r-- 1 user group 0 date file
+</code></pre></div></div>
+
+<p>There are other properties such as <strong>ACLs</strong> (access list control) and other <a href="https://en.wikipedia.org/wiki/File-system_permissions#Changing_permission_behavior_with_setuid,_setgid,_and_sticky_bits">special permissions</a> such as <strong>sticky bit, or setuid, setgid</strong> (Linux) permissions that add more options to DAC access control.</p>
+
+<hr />
+<h3 id="mandatory-access-control-mac">Mandatory Access Control (MAC)</h3>
+<p>In enterprise environments, data protection is important, and having a security strategy in place is a prerequisite to protect customer data and internal information from unauthorized access and unwanted use.</p>
+
+<p>To solve this problem, there are several models to implement and maintain this access control, one of them is the <strong><em>Mandatory Access Control (MAC)</em></strong> is a model for controlling user access to resources (objects, files, systems, processes, ports, etc.) based on access rights established by a <strong>central authority</strong>. Mandatory rules are established to protect access to resources by unauthorized users.</p>
+
+<p>However, defining and assigning access authorizations to each user or computer can be a complex task even for companies; it is usually up to the <strong>central administration</strong> of the company to assign these permissions. This is usually done by a person with knowledge of the employees tasks, which ensures that all employees can carry out their activities without restrictions and are not restricted because they do not have a specific authorization.</p>
+
+<p>In <strong>Linux</strong> there are tools capable of helping us with the management of these authorizations, we can find <a href="/blog/selinux"><strong>SELinux</strong></a> (Security Enhanced Linux) used in distributions such as CentOS or Ret Hat, and also <a href="/blog/apparmor"><strong>AppArmor</strong></a> used in Debian systems.</p>
+
+<center>
+<img src="https://oracle-patches.com/images/2021/07/27/AppArmor_large.jpg" />
+</center>
+
+<hr />
+<h3 id="role-based-access-control"><strong>Role Based Access Control</strong></h3>
+<p>Discretionary access control does not provide sufficient granularity to allow for more defined and structured segmentation in a complex system with a multitude of users and roles. In this case, a <strong>role-based mechanism</strong> provides greater versatility. Role-based access control consists of defining profiles (roles) to which a series of characteristics are attributed that apply to the permissions and actions they can carry out, including control over other profiles. It is, in a way, a hierarchical system of classes.</p>
+
+<p>This is widely used in organizations with a <strong>large number of users</strong> and where different work groups or departments with differentiated functions are integrated, such as systems department, development department, commercial department, general services, etc. With this mechanism, access to objects and tasks is segmented and organized efficiently. Representative examples of these mechanisms are <a href="https://www.ibm.com/docs/en/ts7700-virtual-tape/5.0?topic=security-ldap-role-based-access-control">LDAP</a>, <a href="https://learn.microsoft.com/en-us/exchange/active-directory-permissions-role-exchange-2013-help?redirectedfrom=MSDN">Active Directory</a> of Microsoft Windows or <a href="https://docs.fedoraproject.org/en-US/Fedora/15/html/FreeIPA_Guide/managing-access-to-ipa.html">FreeIPA</a> of Fedora/Redhat. Some UNIX systems such as <a href="http://docs.oracle.com/cd/E23824_01/html/821-1456/rbac-1.html">Solaris</a> or <a href="http://www.ibm.com/developerworks/aix/library/au-aix_rbac/index.html">AIX</a> also implement this privilege system.</p>
+
+<center>
+<img src="https://www.dnsstuff.com/wp-content/uploads/2019/10/role-based-access-control-1024x536.jpg" />
+</center>
+
+<hr />
+<h3 id="rule-based-access-control"><strong>Rule Based Access Control</strong></h3>
+<p>Although the acronyms coincide with that of role-based access control, the two should not be confused. Access to resource objects is granted or denied based on a set of rules defined by a <strong>system administrator</strong>, and cannot be changed by users. As with DAC, access properties are stored in <a href="https://en.wikipedia.org/wiki/Access-control_list">access control lists</a> (ACLs) associated with each resource. When a user or group attempts to access a resource, the access control <strong>list rules</strong> for that object that have been defined by the system administrator are checked. For example, these rules may allow access to the network only from certain IPs, or allow access from a specific IP unless it comes from a specific port, or restrict access to data only during business hours.</p>
+
+<center>
+<img src="https://media.giphy.com/media/G4E2L5v6y32jNLcIAM/giphy.gif" />
+</center>
+
+<hr />
+
 
     </div>
 
@@ -314,25 +245,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Linux&url=http://localhost:6060/blog/basic-linux-commands"
+        href="https://twitter.com/intent/tweet?text=Access%20Control&url=http://localhost:6060/blog/access-control"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basic-linux-commands"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/access-control"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basic-linux-commands&amp;media=http://localhost:6060/resources/posts/basics-linux.png&amp;description=Basics%20Linux"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/access-control&amp;media=http://localhost:6060https://media.giphy.com/media/bKj0qEKTVBdF2o5Dgn/giphy.gif&amp;description=Access%20Control"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basic-linux-commands&title=Basics%20Linux&summary=Discover%20help%20commands%20for%20working%20with%20the%20terminal%20in%20linux.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/access-control&title=Access%20Control&summary=Main%20types%20of%20access%20controls%20that%20we%20can%20find%20in%20the%20systems.&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -349,25 +280,25 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-  <a class="post__prev" href="/blog/basics-git">
+  <a class="post__prev" href="/blog/debianvscentos">
     <div class="prev__image">
-      <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Linux">
+      <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Access Control">
     </div>
     <div class="prev__box">
       <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Basics Git</h2>
+      <h2 class="post__nav__title">Debian vs CentOS</h2>
     </div>
   </a>
   
 
   
-  <a class="post__next" href="/blog/debianvscentos">
+  <a class="post__next" href="/blog/selinux">
     <div class="next__box">
       <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Debian vs CentOS</h2>
+      <h2 class="post__nav__title">SELinux</h2>
     </div>
     <div class="next__image">
-      <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Basics Linux">
+      <img loading="lazy" src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" alt="Access Control">
     </div>
   </a>
   
@@ -535,14 +466,21 @@
             
       
             
+            
+            
+            
+      
+            
+      
+            
 
               <div class="article col col-4 col-d-6 col-t-12">
                 <div class="article__inner">
               
                   
                   <div class="image-wrap">
-                    <a class="article__image" href="/blog/access-control">
-                      <img loading="lazy" src="https://media.giphy.com/media/bKj0qEKTVBdF2o5Dgn/giphy.gif" alt="Access Control">
+                    <a class="article__image" href="/blog/debianvscentos">
+                      <img loading="lazy" src="https://media.giphy.com/media/vAWN2mjW9dSLu/giphy.gif" alt="Debian vs CentOS">
                     </a>
                   </div>
                   
@@ -554,7 +492,9 @@
                       
                       <a href="/tag/linux" class="article__tag">Linux</a>
                       
-                      <a href="/tag/access control" class="article__tag">Access Control</a>
+                      <a href="/tag/debian" class="article__tag">Debian</a>
+                      
+                      <a href="/tag/centos" class="article__tag">Centos</a>
                       
                       <a href="/tag/guide" class="article__tag">Guide</a>
                       
@@ -562,11 +502,11 @@
                     
               
                     <h2 class="article__title">
-                      <a href="/blog/access-control">Access Control</a>
+                      <a href="/blog/debianvscentos">Debian vs CentOS</a>
                     </h2>
               
                     <p class="article__excerpt">
-                      Main types of access controls that we can find in the systems.
+                      Main diferences of Debian and CentOS.
                     </p>
               
                     <div class="article__meta">
@@ -575,7 +515,7 @@
                       </div>
                       <div class="article-info">
                         <div class="article__author-name">goldcod3</div>
-                        <span class="article__date"><time datetime="2022-08-05T10:01:35+02:00">05 Aug 2022</time></span>
+                        <span class="article__date"><time datetime="2022-08-02T16:01:35+02:00">02 Aug 2022</time></span>
                       </div>
                     </div>
               
