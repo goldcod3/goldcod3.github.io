@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Git</title>
-  <meta name='description' content='What is Git? Know the tool and its basic commands.'>
+  <title>Virtual Machines</title>
+  <meta name='description' content='What is a virtual machine? How to create a VM?.'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basics-git">
+  <link rel="canonical" href="http://localhost:6060/blog/virtual-machines">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Git – Daniel">
-  <meta name="twitter:description" content="What is Git? Know the tool and its basic commands.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta name="twitter:title" content="Virtual Machines – Daniel">
+  <meta name="twitter:description" content="What is a virtual machine? How to create a VM?.">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Git – Daniel">
-  <meta property="og:description" content="What is Git? Know the tool and its basic commands.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta property="og:title" content="Virtual Machines – Daniel">
+  <meta property="og:description" content="What is a virtual machine? How to create a VM?.">
+  <meta property="og:image" content="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Git">
+          <img loading="lazy" src="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif" alt="Virtual Machines">
         </div>
       </div>
       
@@ -145,17 +145,17 @@
           
           <div class="post-tags">
             
-              <a href="/tag/git" class="post-tags__tag">Git</a>
+              <a href="/tag/virtual machine" class="post-tags__tag">Virtual Machine</a>
+            
+              <a href="/tag/virtualization" class="post-tags__tag">Virtualization</a>
             
               <a href="/tag/guide" class="post-tags__tag">Guide</a>
-            
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Git</h1>
+          <h1 class="post__title">Virtual Machines</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +164,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-16T07:01:35+02:00">16 Aug 2022</time>
             </div>
           </div>
 
@@ -180,57 +180,84 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In this post I explain what is Git and show you some commands that will help you in your day to day work with this wonderful tool! but first of all…</p>
+      <h1 id="virtual-machines"><strong>Virtual Machines</strong></h1>
+<p>It is nothing more than software capable of loading another operating system inside it, making it believe that it is a real PC. As its name suggests, the concept is as simple as creating a machine (PC, console, mobile or whatever) that instead of being physical is virtual or emulated using the host’s resources.</p>
 
-<h2 id="what-is-git">What is Git?</h2>
+<h3 id="system-vm">System VM</h3>
+<center>
+<img src="/resources/posts/vm01.jpg" />
+</center>
+<p><br /></p>
 
-<blockquote>
-  <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency!</p>
-</blockquote>
+<p>A <strong>virtual system machine</strong> is one that emulates a complete computer. In plain words, it is software that can impersonate another device so that you can run another operating system inside it. It has its own hard disk, memory, graphics card and other hardware components, but they are all virtual.</p>
 
-<p>It is generally used for source code management in software development.</p>
-<ul>
-  <li>Git is used to tracking changes in the source code.</li>
-  <li>The distributed version control tool is used for source code management.</li>
-  <li>It allows multiple developers to work together.</li>
-  <li>It supports non-linear development through its thousands of parallel branches.</li>
-</ul>
+<p>It may have reserved resources of 2 GB of RAM and 20 GB of hard disk, which obviously come from somewhere: from the PC where the virtual machine is installed, also sometimes called the <strong>hypervisor</strong>, the <em>host</em>. Other devices might actually be physically non-existent, such as a CD-ROM that is actually the contents of an ISO image instead of a real CD drive.</p>
 
-<p><img src="https://media.giphy.com/media/kH6CqYiquZawmU1HI6/giphy.gif" alt="Git" width="1200" height="900" /></p>
+<p>Virtualization can be by software or with <strong>hardware support</strong>, in which case better performance is obtained. Since 2005 it is common for processors to have hardware virtualization technology, although it is not always enabled by default in the BIOS.</p>
 
-<h2 id="features-of-git">Features of Git</h2>
-<ul>
-  <li>Tracks history</li>
-  <li>Free and open source</li>
-  <li>Supports non-linear development</li>
-  <li>Creates backups</li>
-  <li>Scalable</li>
-  <li>Supports collaboration</li>
-  <li>Branching is easier</li>
-  <li>Distributed development</li>
-</ul>
+<h3 id="process-vm">Process VM</h3>
+<center>
+<img src="/resources/posts/vm02.jpeg" />
+</center>
+<p><br /></p>
 
-<h2 id="git-workflow">Git Workflow</h2>
+<p>A <strong>processing virtual machine</strong> is less ambitious than a system virtual machine. Instead of emulating a PC entirely, it runs a particular process, such as an application, in its runtime environment. It sounds a bit esoteric, but you use it every time you run a Java-based or .NET Framework-based application.</p>
 
-<p><img src="/resources/posts/git-workflow.jpg" alt="Git Workflow" width="1200" height="900" /></p>
+<p>Process virtual machines allow you to enjoy <strong>applications that behave the same</strong> on platforms as different as Windows, Mac or Linux, but you as a user will usually not pay much attention to them. That’s why, unless you are a programmer, when we talk about virtual machines we are generally referring to system virtual machines.</p>
 
-<p>The Git workflow is divided into three states:</p>
+<hr />
+<h2 id="advantages-of-vms"><strong>Advantages of VMs</strong></h2>
+<p>Virtual machines have a wide variety of uses in both professional and consumer environments, these are their main advantages and uses:</p>
 
 <ul>
-  <li><strong>Working directory</strong> - Modify files in your working directory.</li>
-  <li><strong>Staging area</strong> (Index) - Stage the files and add snapshots of them to your staging area.</li>
-  <li><strong>Git directory</strong> (Repository) - Perform a commit that stores the snapshots permanently to your Git directory. Checkout any existing version, make changes, stage them and commit.</li>
+  <li><strong>Try other operating systems</strong>. Installing an operating system on your PC is a long, tedious process and difficult to reverse if you are not satisfied with the results. So, when there is a new version of Windows it is easier and safer to test it by installing it in a virtual machine than on your hard drive. If something goes wrong, you delete it and that’s it, without risking to lose a lot of time or your data.</li>
+  <li><strong>To run older programs</strong>. What happens when your business depends on software that hasn’t been updated for 20 years? If you can’t modernize the software you have no choice but to keep loading it on a legacy operating system. With a virtual machine this old system can run on current hardware instead of on a junk PC. The same applies to old games that no longer run on modern hardware or software.</li>
+  <li><strong>Use applications available for other systems</strong>. You may also need a virtual machine to run applications that have been developed for another operating system than the one you are using. For example, to use a Linux application from Windows, or the opposite.</li>
+  <li><strong>For testing of an application on different systems</strong>. As an application developer you want them to work correctly in as many configurations as possible, and that includes different versions of operating systems. One option is to have half a dozen PCs installed with different versions and different systems or just one with virtual machines.</li>
+  <li><strong>As additional security</strong>. Being isolated from the rest, a virtual machine provides you with additional security in precise tasks where you want to be sure that an application will not have access to the rest of your data. That is why they are often used to do such dangerous things as installing viruses and malware to study them.</li>
+  <li><strong>Its great dynamism</strong>. By their nature virtual machines are very useful in occasions where you need extreme dynamism in the system. You can save states (exact copies of your data), extend them, move them to a totally different hardware and they will continue working without problems. This is why they are essential for example in companies with web servers that host a multitude of machines with their clients’ web pages.</li>
 </ul>
 
-<h2 id="basics-git">Basics Git</h2>
+<center>
+<img src="/resources/posts/vm03.png" />
+</center>
 
-<p>I leave you with this cheatsheet to help you to use the tool!</p>
+<p>There are many advantages that we could mention when talking about virtual machines, but there is always a disadvantage, and this is the <strong>performance</strong>. As expected, if your PC hardware is used to run two operating systems at the same time instead of one, performance suffers. Although applications for creating virtual machines are becoming more efficient and the hardware more powerful, <strong>emulating a system always requires extra effort</strong> that is not necessary if the software could communicate directly with the hardware, without intermediaries.</p>
 
-<p><img src="/resources/content/cheatsheet-git.jpg" alt="Git Workflow" width="1200" height="900" /></p>
+<hr />
+<h2 id="how-to-create-a-vm"><strong>How to create a VM?</strong></h2>
+<p>To use a virtual machine the first thing you need is to install an application on your PC capable of creating or at least reproducing it. There are several well known applications capable of doing this, although the most famous ones are:</p>
 
-<p>if you want to find out more about the tool, I recommend you to go to the official website by clicking <a href="https://git-scm.com/">HERE</a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Software</th>
+      <th>SO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.vmware.com/">VMware</a></td>
+      <td>Windows - Linux</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.virtualbox.org/">VirtualBox</a></td>
+      <td>Windows - Linux - MacOs</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.parallels.com/">Parallels</a></td>
+      <td>MacOs</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="enjoy"><strong>Enjoy!</strong></h2>
+<p>Besides being able to create virtual machines by means of these applications, Windows counts on <a href="https://en.wikipedia.org/wiki/Hyper-V">Hyper-v</a>, this one has as function <strong>manage the access and operation of the virtual systems, as well as the resources of the physical hardware of the host computer</strong>. Like other applications such as VMware or VirtualBox it will allow us to work simultaneously with an operating system installed on another physical system and to be able to perform tests on it without at any time our physical computer being modified in any way.</p>
+
+<center>
+<img src="https://geekflare.com/wp-content/uploads/2022/06/virtualiazation.png" />
+</center>
+
+<p>Hyper-v provides support for hardware virtualization which means that each virtual machine we run will run on virtual hardware composed of the typical devices a computer needs: hard disk, network card, CPU, RAM and others.</p>
 
     </div>
 
@@ -241,25 +268,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Git&url=http://localhost:6060/blog/basics-git"
+        href="https://twitter.com/intent/tweet?text=Virtual%20Machines&url=http://localhost:6060/blog/virtual-machines"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basics-git"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/virtual-machines"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basics-git&amp;media=http://localhost:6060/resources/posts/basics-git.png&amp;description=Basics%20Git"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/virtual-machines&amp;media=http://localhost:6060https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif&amp;description=Virtual%20Machines"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basics-git&title=Basics%20Git&summary=What%20is%20Git?%20Know%20the%20tool%20and%20its%20basic%20commands.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/virtual-machines&title=Virtual%20Machines&summary=What%20is%20a%20virtual%20machine?%20How%20to%20create%20a%20VM?.&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -276,15 +303,25 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
+  <a class="post__prev" href="/blog/apparmor">
+    <div class="prev__image">
+      <img loading="lazy" src="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif" alt="Virtual Machines">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">AppArmor</h2>
+    </div>
+  </a>
+  
 
   
-  <a class="post__next" href="/blog/basic-linux-commands">
+  <a class="post__next" href="/blog/lvm">
     <div class="next__box">
       <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Basics Linux</h2>
+      <h2 class="post__nav__title">LVM</h2>
     </div>
     <div class="next__image">
-      <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Git">
+      <img loading="lazy" src="https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif" alt="Virtual Machines">
     </div>
   </a>
   
@@ -312,7 +349,7 @@
                 
                 
                   
-                    <a href="/tags#Git" class="section__link related-tag">See all<span> Git</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tags#Virtual Machine" class="section__link related-tag">See all<span> Virtual Machine</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   

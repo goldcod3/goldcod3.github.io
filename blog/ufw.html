@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Git</title>
-  <meta name='description' content='What is Git? Know the tool and its basic commands.'>
+  <title>UFW</title>
+  <meta name='description' content='See what a firewall is and how it protects your computer from threats.'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basics-git">
+  <link rel="canonical" href="http://localhost:6060/blog/ufw">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Git – Daniel">
-  <meta name="twitter:description" content="What is Git? Know the tool and its basic commands.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta name="twitter:title" content="UFW – Daniel">
+  <meta name="twitter:description" content="See what a firewall is and how it protects your computer from threats.">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/VGwTq3G6a39cI/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Git – Daniel">
-  <meta property="og:description" content="What is Git? Know the tool and its basic commands.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta property="og:title" content="UFW – Daniel">
+  <meta property="og:description" content="See what a firewall is and how it protects your computer from threats.">
+  <meta property="og:image" content="https://media.giphy.com/media/VGwTq3G6a39cI/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Git">
+          <img loading="lazy" src="https://media.giphy.com/media/VGwTq3G6a39cI/giphy.gif" alt="UFW">
         </div>
       </div>
       
@@ -145,17 +145,17 @@
           
           <div class="post-tags">
             
-              <a href="/tag/git" class="post-tags__tag">Git</a>
+              <a href="/tag/linux" class="post-tags__tag">Linux</a>
+            
+              <a href="/tag/firewall" class="post-tags__tag">Firewall</a>
             
               <a href="/tag/guide" class="post-tags__tag">Guide</a>
-            
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Git</h1>
+          <h1 class="post__title">UFW</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +164,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-27T16:01:35+02:00">27 Aug 2022</time>
             </div>
           </div>
 
@@ -180,57 +180,67 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In this post I explain what is Git and show you some commands that will help you in your day to day work with this wonderful tool! but first of all…</p>
+      <h1 id="ufw-uncomplicated-firewall">UFW (Uncomplicated Firewall)</h1>
 
-<h2 id="what-is-git">What is Git?</h2>
+<p>UFW is an acronym for <strong>Uncomplicated Firewall</strong>. Although Linux already has other connection control measures, such as <a href="https://en.wikipedia.org/wiki/Iptables">iptables</a>, actually controlling the firewall through them is a very complicated task. Canonical therefore decided to create a simple-to-use firewall so that all users can <strong>configure iptables</strong> using a small number of simple commands.</p>
 
-<blockquote>
-  <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency!</p>
-</blockquote>
+<p>This firewall is completely <strong>free</strong>, open source and written in Python. It comes by default in Ubuntu since version 8.04 LTS, and many distros have decided to add it by default because of its usefulness. Also, if it does not come, we can download and install it without problems from their respective repositories.</p>
 
-<p>It is generally used for source code management in software development.</p>
-<ul>
-  <li>Git is used to tracking changes in the source code.</li>
-  <li>The distributed version control tool is used for source code management.</li>
-  <li>It allows multiple developers to work together.</li>
-  <li>It supports non-linear development through its thousands of parallel branches.</li>
-</ul>
+<center>
+<img src="https://geekflare.com/wp-content/uploads/2020/07/firewall-1.png" height="400" />
+</center>
 
-<p><img src="https://media.giphy.com/media/kH6CqYiquZawmU1HI6/giphy.gif" alt="Git" width="1200" height="900" /></p>
+<p>It is important to note that, although it is the default in many distributions, it is usually <strong>disabled</strong>. This is done to prevent users from having rule conflicts that can cause hard to identify problems when connecting to the Internet or using certain programs.</p>
 
-<h2 id="features-of-git">Features of Git</h2>
-<ul>
-  <li>Tracks history</li>
-  <li>Free and open source</li>
-  <li>Supports non-linear development</li>
-  <li>Creates backups</li>
-  <li>Scalable</li>
-  <li>Supports collaboration</li>
-  <li>Branching is easier</li>
-  <li>Distributed development</li>
-</ul>
+<hr />
+<h2 id="installation-and-configuration">Installation and configuration</h2>
 
-<h2 id="git-workflow">Git Workflow</h2>
+<p>To install the application we execute the following commands:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt update
+sudo apt install ufw
+</code></pre></div></div>
 
-<p><img src="/resources/posts/git-workflow.jpg" alt="Git Workflow" width="1200" height="900" /></p>
+<p>We can easily check the status of this firewall:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw status
+</code></pre></div></div>
 
-<p>The Git workflow is divided into three states:</p>
+<p>To enable or disable the tool:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw &lt;enable/disable&gt;
+</code></pre></div></div>
 
-<ul>
-  <li><strong>Working directory</strong> - Modify files in your working directory.</li>
-  <li><strong>Staging area</strong> (Index) - Stage the files and add snapshots of them to your staging area.</li>
-  <li><strong>Git directory</strong> (Repository) - Perform a commit that stores the snapshots permanently to your Git directory. Checkout any existing version, make changes, stage them and commit.</li>
-</ul>
+<p>To view the <strong>list of applications with rules</strong>, run the command as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw app list
+</code></pre></div></div>
 
-<h2 id="basics-git">Basics Git</h2>
+<p>To see the details of one of the rules, then we will execute the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw app info app_name
+</code></pre></div></div>
 
-<p>I leave you with this cheatsheet to help you to use the tool!</p>
+<p>To allow or deny connections on any port of our computer we execute:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw &lt;allow/deny&gt; &lt;port&gt;
+</code></pre></div></div>
+<p>In addition to enabling a specific port, we can enable a range of ports and even indicate the port protocol as shown below:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw allow 50000:53000/tcp
+</code></pre></div></div>
 
-<p><img src="/resources/content/cheatsheet-git.jpg" alt="Git Workflow" width="1200" height="900" /></p>
+<p>We can also create rules that apply within the LAN so that other PCs on the LAN can connect to our computer. For example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw allow from 192.168.1.100/24 to any port 8080
+</code></pre></div></div>
 
-<p>if you want to find out more about the tool, I recommend you to go to the official website by clicking <a href="https://git-scm.com/">HERE</a></p>
+<p>We can <strong>see a complete list with all the rules</strong> and instructions we have created in our firewall using this command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw status numbered
+</code></pre></div></div>
 
-<h2 id="enjoy"><strong>Enjoy!</strong></h2>
+<p>Taking into account the numbers shown in the previous command, if we want to delete any rule, we execute the following instruction:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw delete &lt;num&gt;
+</code></pre></div></div>
+
+<p>And finally, if we want to reset the firewall completely, we can do it in a simple way by stopping it as we have seen before and executing:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw reset
+</code></pre></div></div>
+<p>All rules will be deleted and all settings will be reset to factory defaults.</p>
+
+<hr />
 
     </div>
 
@@ -241,25 +251,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Git&url=http://localhost:6060/blog/basics-git"
+        href="https://twitter.com/intent/tweet?text=UFW&url=http://localhost:6060/blog/ufw"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basics-git"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/ufw"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basics-git&amp;media=http://localhost:6060/resources/posts/basics-git.png&amp;description=Basics%20Git"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/ufw&amp;media=http://localhost:6060https://media.giphy.com/media/VGwTq3G6a39cI/giphy.gif&amp;description=UFW"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basics-git&title=Basics%20Git&summary=What%20is%20Git?%20Know%20the%20tool%20and%20its%20basic%20commands.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/ufw&title=UFW&summary=See%20what%20a%20firewall%20is%20and%20how%20it%20protects%20your%20computer%20from%20threats.&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -276,17 +286,17 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-
-  
-  <a class="post__next" href="/blog/basic-linux-commands">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Basics Linux</h2>
+  <a class="post__prev" href="/blog/apt-aptitude">
+    <div class="prev__image">
+      <img loading="lazy" src="https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif" alt="UFW">
     </div>
-    <div class="next__image">
-      <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Git">
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Apt vs Aptitude</h2>
     </div>
   </a>
+  
+
   
 </div>
     </div>
@@ -312,7 +322,7 @@
                 
                 
                   
-                    <a href="/tags#Git" class="section__link related-tag">See all<span> Git</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tags#Linux" class="section__link related-tag">See all<span> Linux</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -332,57 +342,6 @@
             
       
             
-
-              <div class="article col col-4 col-d-6 col-t-12">
-                <div class="article__inner">
-              
-                  
-                  <div class="image-wrap">
-                    <a class="article__image" href="/blog/ufw">
-                      <img loading="lazy" src="https://media.giphy.com/media/VGwTq3G6a39cI/giphy.gif" alt="UFW">
-                    </a>
-                  </div>
-                  
-              
-                  <div class="article__content">
-              
-                    
-                    <div class="article-tags__box">
-                      
-                      <a href="/tag/linux" class="article__tag">Linux</a>
-                      
-                      <a href="/tag/firewall" class="article__tag">Firewall</a>
-                      
-                      <a href="/tag/guide" class="article__tag">Guide</a>
-                      
-                    </div>
-                    
-              
-                    <h2 class="article__title">
-                      <a href="/blog/ufw">UFW</a>
-                    </h2>
-              
-                    <p class="article__excerpt">
-                      See what a firewall is and how it protects your computer from threats.
-                    </p>
-              
-                    <div class="article__meta">
-                      <div class="article__author-image">
-                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
-                      </div>
-                      <div class="article-info">
-                        <div class="article__author-name">goldcod3</div>
-                        <span class="article__date"><time datetime="2022-08-27T16:01:35+02:00">27 Aug 2022</time></span>
-                      </div>
-                    </div>
-              
-                  </div>
-                </div>
-              </div>
-
-            
-                
-              
             
             
             
@@ -489,6 +448,64 @@
                       <div class="article-info">
                         <div class="article__author-name">goldcod3</div>
                         <span class="article__date"><time datetime="2022-08-19T18:01:35+02:00">19 Aug 2022</time></span>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            
+                
+              
+            
+            
+            
+      
+            
+      
+            
+
+              <div class="article col col-4 col-d-6 col-t-12">
+                <div class="article__inner">
+              
+                  
+                  <div class="image-wrap">
+                    <a class="article__image" href="/blog/virtual-machines">
+                      <img loading="lazy" src="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif" alt="Virtual Machines">
+                    </a>
+                  </div>
+                  
+              
+                  <div class="article__content">
+              
+                    
+                    <div class="article-tags__box">
+                      
+                      <a href="/tag/virtual machine" class="article__tag">Virtual Machine</a>
+                      
+                      <a href="/tag/virtualization" class="article__tag">Virtualization</a>
+                      
+                      <a href="/tag/guide" class="article__tag">Guide</a>
+                      
+                    </div>
+                    
+              
+                    <h2 class="article__title">
+                      <a href="/blog/virtual-machines">Virtual Machines</a>
+                    </h2>
+              
+                    <p class="article__excerpt">
+                      What is a virtual machine? How to create a VM?.
+                    </p>
+              
+                    <div class="article__meta">
+                      <div class="article__author-image">
+                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
+                      </div>
+                      <div class="article-info">
+                        <div class="article__author-name">goldcod3</div>
+                        <span class="article__date"><time datetime="2022-08-16T07:01:35+02:00">16 Aug 2022</time></span>
                       </div>
                     </div>
               

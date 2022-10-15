@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Git</title>
-  <meta name='description' content='What is Git? Know the tool and its basic commands.'>
+  <title>LVM</title>
+  <meta name='description' content='Do you know the Logic Volumes? Learn how to manage them here!'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basics-git">
+  <link rel="canonical" href="http://localhost:6060/blog/lvm">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Git – Daniel">
-  <meta name="twitter:description" content="What is Git? Know the tool and its basic commands.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta name="twitter:title" content="LVM – Daniel">
+  <meta name="twitter:description" content="Do you know the Logic Volumes? Learn how to manage them here!">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Git – Daniel">
-  <meta property="og:description" content="What is Git? Know the tool and its basic commands.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta property="og:title" content="LVM – Daniel">
+  <meta property="og:description" content="Do you know the Logic Volumes? Learn how to manage them here!">
+  <meta property="og:image" content="https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Git">
+          <img loading="lazy" src="https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif" alt="LVM">
         </div>
       </div>
       
@@ -145,17 +145,17 @@
           
           <div class="post-tags">
             
-              <a href="/tag/git" class="post-tags__tag">Git</a>
+              <a href="/tag/linux" class="post-tags__tag">Linux</a>
+            
+              <a href="/tag/lvm" class="post-tags__tag">LVM</a>
             
               <a href="/tag/guide" class="post-tags__tag">Guide</a>
-            
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Git</h1>
+          <h1 class="post__title">LVM</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +164,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-19T18:01:35+02:00">19 Aug 2022</time>
             </div>
           </div>
 
@@ -180,57 +180,69 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In this post I explain what is Git and show you some commands that will help you in your day to day work with this wonderful tool! but first of all…</p>
+      <h1 id="lvm-logical-volume-manager"><strong>LVM (Logical Volume Manager)</strong>*</h1>
+<p>It is a software that allows the implementation of <a href="https://en.wikipedia.org/wiki/RAID">RAID</a> from partitions and offer them to the operating system as new devices. For its operation, it assigns the disks to one or more physical volumes that must be partitioned as LVM type. LVM storage volumes have the ability to be <strong>resized</strong> and <strong>transported</strong> depending on the user’s needs and using the updated device tools.</p>
 
-<h2 id="what-is-git">What is Git?</h2>
+<p>This manager uses the <strong>RAID0 or <em>stripe</em> of logical volumes</strong>, which does not perform redundancy for storage. In addition, this array performs the function of accelerating data by combining multiple hard disks within a logical drive.</p>
 
-<blockquote>
-  <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency!</p>
-</blockquote>
+<center>
+<img src="https://weblinus.com/wp-content/uploads/2021/01/PortadaPost.jpg" />
+</center>
 
-<p>It is generally used for source code management in software development.</p>
+<p><em>Logical Volume Management</em> makes use of the <a href="https://en.wikipedia.org/wiki/Device_mapper">device-mapper</a> function of the Linux kernel to provide a partition system independent of the underlying disk structure. With LVM it is possible to create an abstract storage space as well as different virtual partitions, making it easier to <strong>enlarge/shrink</strong> partitions (always subject to possible limitations).</p>
+
+<p>The basic building blocks of LVM are:</p>
 <ul>
-  <li>Git is used to tracking changes in the source code.</li>
-  <li>The distributed version control tool is used for source code management.</li>
-  <li>It allows multiple developers to work together.</li>
-  <li>It supports non-linear development through its thousands of parallel branches.</li>
+  <li><strong>PV</strong> (Physical Volume): Unix block device node, usable for LVM storage. Examples: a hard disk, a <a href="https://wiki.archlinux.org/title/Partitioning">partition</a> MBR or GPT, a loopback file, a device mapper device (<a href="https://en.wikipedia.org/wiki/Dm-crypt">dm-crypt</a>). It hosts an LVM header.</li>
+  <li><strong>VG</strong> (Volume Group): A group of physical volumes that serves as a container for logical volumes. Physical extents are allocated from a volume group for a logical volume.</li>
+  <li><strong>LV</strong> (Logical Volume): A virtual/logical partition that resides in a volume group and is composed of physical extents. Logical volumes are Unix block devices analogous to physical partitions, they can be formatted directly with a file system.</li>
+  <li><strong>PE</strong> (Physical Extent): The smallest contiguous extent (default 4 MiB) on the physical volume that can be mapped to a logical volume. Think of physical extents as parts of physical volumes that can be mapped to any logical volume.</li>
 </ul>
 
-<p><img src="https://media.giphy.com/media/kH6CqYiquZawmU1HI6/giphy.gif" alt="Git" width="1200" height="900" /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Physical Disks**
 
-<h2 id="features-of-git">Features of Git</h2>
+  Disk 1 (/dev/sda):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+|Partition1 50 GiB (Physical volume)|Partition2 80 GiB (Physical volume)|  
+|/dev/sda1                          |/dev/sda2                          |  
+|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+
+  Disk 2 (/dev/sdb):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+|Partition1 120 GiB (Physical volume)               |
+|/dev/sdb1                                          |
+| _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _|
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Logical Volumes LVM**
+
+Volume Group1 (/dev/MyStorage/ = /dev/sda1 + /dev/sda2 + /dev/sdb1):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+|VL1 15 GiB             |VL2 35 GiB             |VL3 200 GiB            |
+|/dev/MyVolGroup/root   |/dev/MyVolGroup/home   |/dev/MyVolGroup/media  |
+|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| _ _ _ _ _ _ _ _ _ _ _ |
+</code></pre></div></div>
+
+<hr />
+<h2 id="advantages-of-lvm"><strong>Advantages of LVM</strong></h2>
+
+<center>
+<img src="https://www.linuxtopia.org/online_books/centos5/centos5_administration_guide/images/lvm/lvg.png" />
+</center>
+
 <ul>
-  <li>Tracks history</li>
-  <li>Free and open source</li>
-  <li>Supports non-linear development</li>
-  <li>Creates backups</li>
-  <li>Scalable</li>
-  <li>Supports collaboration</li>
-  <li>Branching is easier</li>
-  <li>Distributed development</li>
+  <li>Being able to use any number of disks as one large disk.</li>
+  <li>Have logical volumes stretched over several disks.</li>
+  <li>Create small logical volumes and dynamically resize them when they fill up.</li>
+  <li>Resize logical volumes regardless of their order on disk. It does not depend on the position of the logical volume within the volume group, nor is there any need to secure the surrounding available space.</li>
+  <li>Resize/create/delete the size of logical and physical volumes online. File systems on them will still need to be resized, but some (such as ext4) support online resizing.</li>
+  <li>Online/live migration of logical volumes, being used by services for different disks without having to restart the services.</li>
+  <li>Perform snapshots that allow backups of the file system, while keeping service downtime to a minimum.</li>
 </ul>
 
-<h2 id="git-workflow">Git Workflow</h2>
+<p>As disadvantages of this technology we can highlight, <strong>the additional steps to configure the system with LVM</strong>, which makes it more complicated, and you can not configure a <strong>Dual-Boot</strong> set to Windows, as this <strong>is not compatible</strong> with LVM, so you can not access any LVM partition.</p>
 
-<p><img src="/resources/posts/git-workflow.jpg" alt="Git Workflow" width="1200" height="900" /></p>
-
-<p>The Git workflow is divided into three states:</p>
-
-<ul>
-  <li><strong>Working directory</strong> - Modify files in your working directory.</li>
-  <li><strong>Staging area</strong> (Index) - Stage the files and add snapshots of them to your staging area.</li>
-  <li><strong>Git directory</strong> (Repository) - Perform a commit that stores the snapshots permanently to your Git directory. Checkout any existing version, make changes, stage them and commit.</li>
-</ul>
-
-<h2 id="basics-git">Basics Git</h2>
-
-<p>I leave you with this cheatsheet to help you to use the tool!</p>
-
-<p><img src="/resources/content/cheatsheet-git.jpg" alt="Git Workflow" width="1200" height="900" /></p>
-
-<p>if you want to find out more about the tool, I recommend you to go to the official website by clicking <a href="https://git-scm.com/">HERE</a></p>
-
-<h2 id="enjoy"><strong>Enjoy!</strong></h2>
+<p>All Linux systems in their initial installation will give you the ability to configure LVM when installing the system, it is recommended to perform the configuration in a virtual machine before performing it in native.</p>
 
     </div>
 
@@ -241,25 +253,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Git&url=http://localhost:6060/blog/basics-git"
+        href="https://twitter.com/intent/tweet?text=LVM&url=http://localhost:6060/blog/lvm"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basics-git"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/lvm"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basics-git&amp;media=http://localhost:6060/resources/posts/basics-git.png&amp;description=Basics%20Git"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/lvm&amp;media=http://localhost:6060https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif&amp;description=LVM"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basics-git&title=Basics%20Git&summary=What%20is%20Git?%20Know%20the%20tool%20and%20its%20basic%20commands.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/lvm&title=LVM&summary=Do%20you%20know%20the%20Logic%20Volumes?%20Learn%20how%20to%20manage%20them%20here!&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -276,15 +288,25 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
+  <a class="post__prev" href="/blog/virtual-machines">
+    <div class="prev__image">
+      <img loading="lazy" src="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif" alt="LVM">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Virtual Machines</h2>
+    </div>
+  </a>
+  
 
   
-  <a class="post__next" href="/blog/basic-linux-commands">
+  <a class="post__next" href="/blog/apt-aptitude">
     <div class="next__box">
       <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Basics Linux</h2>
+      <h2 class="post__nav__title">Apt vs Aptitude</h2>
     </div>
     <div class="next__image">
-      <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Git">
+      <img loading="lazy" src="https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif" alt="LVM">
     </div>
   </a>
   
@@ -312,7 +334,7 @@
                 
                 
                   
-                    <a href="/tags#Git" class="section__link related-tag">See all<span> Git</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tags#Linux" class="section__link related-tag">See all<span> Linux</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -448,14 +470,21 @@
             
       
             
+            
+            
+            
+      
+            
+      
+            
 
               <div class="article col col-4 col-d-6 col-t-12">
                 <div class="article__inner">
               
                   
                   <div class="image-wrap">
-                    <a class="article__image" href="/blog/lvm">
-                      <img loading="lazy" src="https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif" alt="LVM">
+                    <a class="article__image" href="/blog/virtual-machines">
+                      <img loading="lazy" src="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif" alt="Virtual Machines">
                     </a>
                   </div>
                   
@@ -465,9 +494,9 @@
                     
                     <div class="article-tags__box">
                       
-                      <a href="/tag/linux" class="article__tag">Linux</a>
+                      <a href="/tag/virtual machine" class="article__tag">Virtual Machine</a>
                       
-                      <a href="/tag/lvm" class="article__tag">LVM</a>
+                      <a href="/tag/virtualization" class="article__tag">Virtualization</a>
                       
                       <a href="/tag/guide" class="article__tag">Guide</a>
                       
@@ -475,11 +504,11 @@
                     
               
                     <h2 class="article__title">
-                      <a href="/blog/lvm">LVM</a>
+                      <a href="/blog/virtual-machines">Virtual Machines</a>
                     </h2>
               
                     <p class="article__excerpt">
-                      Do you know the Logic Volumes? Learn how to manage them here!
+                      What is a virtual machine? How to create a VM?.
                     </p>
               
                     <div class="article__meta">
@@ -488,7 +517,7 @@
                       </div>
                       <div class="article-info">
                         <div class="article__author-name">goldcod3</div>
-                        <span class="article__date"><time datetime="2022-08-19T18:01:35+02:00">19 Aug 2022</time></span>
+                        <span class="article__date"><time datetime="2022-08-16T07:01:35+02:00">16 Aug 2022</time></span>
                       </div>
                     </div>
               

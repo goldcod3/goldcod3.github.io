@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics Git</title>
-  <meta name='description' content='What is Git? Know the tool and its basic commands.'>
+  <title>Apt vs Aptitude</title>
+  <meta name='description' content='Learn what a package manager is and how to use it.'>
 
-  <link rel="canonical" href="http://localhost:6060/blog/basics-git">
+  <link rel="canonical" href="http://localhost:6060/blog/apt-aptitude">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Basics Git – Daniel">
-  <meta name="twitter:description" content="What is Git? Know the tool and its basic commands.">
-  <meta name="twitter:image:src" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta name="twitter:title" content="Apt vs Aptitude – Daniel">
+  <meta name="twitter:description" content="Learn what a package manager is and how to use it.">
+  <meta name="twitter:image:src" content="https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Basics Git – Daniel">
-  <meta property="og:description" content="What is Git? Know the tool and its basic commands.">
-  <meta property="og:image" content="http://localhost:6060/resources/posts/basics-git.png">
+  <meta property="og:title" content="Apt vs Aptitude – Daniel">
+  <meta property="og:description" content="Learn what a package manager is and how to use it.">
+  <meta property="og:image" content="https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/resources/posts/basics-git.png" alt="Basics Git">
+          <img loading="lazy" src="https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif" alt="Apt vs Aptitude">
         </div>
       </div>
       
@@ -145,17 +145,17 @@
           
           <div class="post-tags">
             
-              <a href="/tag/git" class="post-tags__tag">Git</a>
+              <a href="/tag/linux" class="post-tags__tag">Linux</a>
+            
+              <a href="/tag/debian" class="post-tags__tag">Debian</a>
             
               <a href="/tag/guide" class="post-tags__tag">Guide</a>
-            
-              <a href="/tag/basics" class="post-tags__tag">Basics</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Basics Git</h1>
+          <h1 class="post__title">Apt vs Aptitude</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -164,7 +164,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">goldcod3</div>
-              <time class="post__date" datetime="2022-06-19T14:01:35+02:00">19 Jun 2022</time>
+              <time class="post__date" datetime="2022-08-24T00:01:35+02:00">24 Aug 2022</time>
             </div>
           </div>
 
@@ -180,57 +180,136 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In this post I explain what is Git and show you some commands that will help you in your day to day work with this wonderful tool! but first of all…</p>
+      <h1 id="apt-vs-aptitude">Apt vs Aptitude</h1>
 
-<h2 id="what-is-git">What is Git?</h2>
+<p>En distros basadas en <strong>Debian</strong>, el gestor de paquetes  por defecto es <code class="language-plaintext highlighter-rouge">dpkg</code>, y permite instalar, desinstalar y administrar paquetes .deb en el sistema operativo. los paquetes en general cuentan con una serie de <em>dependencias</em>, esto es, paquetes que deben ser instalados previamente para poder instalar y/o usar la aplicación. Estas dependencias se gestionan mediante <strong>APT</strong> (Advanced Package Tool), una herramienta global de alto nivel que incluye a dpkg como backend, y que le agrega las funcionalidades de gestión de <a href="https://en.wikipedia.org/wiki/Software_repository">repositorios</a> externos para dependencias y actualizaciones.</p>
 
-<blockquote>
-  <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency!</p>
-</blockquote>
+<p>Por su parte, <code class="language-plaintext highlighter-rouge">aptitude</code> gestiona el marcado de paquetes también, y dispone de una interfaz opcional de curses que a muchos les facilita el trabajo en la terminal.</p>
 
-<p>It is generally used for source code management in software development.</p>
-<ul>
-  <li>Git is used to tracking changes in the source code.</li>
-  <li>The distributed version control tool is used for source code management.</li>
-  <li>It allows multiple developers to work together.</li>
-  <li>It supports non-linear development through its thousands of parallel branches.</li>
-</ul>
+<hr />
+<h2 id="apt-advanced-package-tool">APT (Advanced Package Tool)</h2>
 
-<p><img src="https://media.giphy.com/media/kH6CqYiquZawmU1HI6/giphy.gif" alt="Git" width="1200" height="900" /></p>
+<center>
+<img src="/resources/posts/apt01.png" />
+</center>
+<p><br /></p>
 
-<h2 id="features-of-git">Features of Git</h2>
-<ul>
-  <li>Tracks history</li>
-  <li>Free and open source</li>
-  <li>Supports non-linear development</li>
-  <li>Creates backups</li>
-  <li>Scalable</li>
-  <li>Supports collaboration</li>
-  <li>Branching is easier</li>
-  <li>Distributed development</li>
-</ul>
+<p><strong>APT</strong> supports different <em>front-ends</em> or applications that make use of its services (API), and they can be for command line, graphical interface, etc. In its beginnings users got used to use a front-end called <code class="language-plaintext highlighter-rouge">apt-get</code>. Through this front-end you can install packages, uninstall, remove, etc. <code class="language-plaintext highlighter-rouge">apt-get</code> is part of a constellation of tools that also includes <code class="language-plaintext highlighter-rouge">apt-cache</code> for searches. <code class="language-plaintext highlighter-rouge">apt</code> does not guarantee backward compatibility with <code class="language-plaintext highlighter-rouge">apt-get</code>, but practically every command has its equivalent.</p>
 
-<h2 id="git-workflow">Git Workflow</h2>
+<p><code class="language-plaintext highlighter-rouge">apt</code> fixes some bugs of the original <code class="language-plaintext highlighter-rouge">apt-get</code> implementation, no bugs, application design errors, combines both functionalities in both commands and structures everything better, also provides features of most of the common <code class="language-plaintext highlighter-rouge">apt-get</code> and <code class="language-plaintext highlighter-rouge">apt-cache</code> commands, adding very useful information that previously required additional options.</p>
 
-<p><img src="/resources/posts/git-workflow.jpg" alt="Git Workflow" width="1200" height="900" /></p>
+<hr />
+<h2 id="aptitude">Aptitude</h2>
 
-<p>The Git workflow is divided into three states:</p>
+<center>
+<img src="/resources/posts/apt02.png" />
+</center>
+<p><br /></p>
 
-<ul>
-  <li><strong>Working directory</strong> - Modify files in your working directory.</li>
-  <li><strong>Staging area</strong> (Index) - Stage the files and add snapshots of them to your staging area.</li>
-  <li><strong>Git directory</strong> (Repository) - Perform a commit that stores the snapshots permanently to your Git directory. Checkout any existing version, make changes, stage them and commit.</li>
-</ul>
+<p>An interface to <code class="language-plaintext highlighter-rouge">apt</code>, it displays a list of software packages and allows the user to interactively choose which ones to install or remove. It has a powerful search system that uses flexible search patterns, making it easy for the user to understand the complex dependency relationships that may exist between packages. It was originally designed for <strong>Debian</strong> GNU/Linux distributions, but today it can also be used on <strong>RPM</strong> package-based distributions.</p>
 
-<h2 id="basics-git">Basics Git</h2>
+<p><code class="language-plaintext highlighter-rouge">aptitude</code> is based on a library <a href="https://en.wikipedia.org/wiki/Ncurses">ncurses</a>, by which it provides an interface, which is known to resolve dependencies better than <code class="language-plaintext highlighter-rouge">apt-get</code> and eliminate useless packages and incorporates some elements common to other graphical interfaces, such as drop-down menus.</p>
 
-<p>I leave you with this cheatsheet to help you to use the tool!</p>
+<hr />
+<h2 id="difference-between-commands">Difference between commands</h2>
+<p>Now we will put some help commands to use these tools and see their differences according to their function.</p>
 
-<p><img src="/resources/content/cheatsheet-git.jpg" alt="Git Workflow" width="1200" height="900" /></p>
+<p><code class="language-plaintext highlighter-rouge">Install package</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt install &lt;pkg&gt; 
+apt-get install &lt;pkg&gt;
+aptitude install &lt;pkg&gt;
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Uninstall package</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt remove &lt;pkg&gt;
+apt-get remove &lt;pkg&gt;
+aptitude remove &lt;pkg&gt;
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Delete pkg and its configuration</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt purge &lt;pkg&gt;
+apt-get purge &lt;pkg&gt;
+aptitude purge &lt;pkg&gt;
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Update repositories</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update
+apt-get update
+aptitude update
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Upgrade packages (without removing or reinstalling)</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt upgrade
+apt-get upgrade
+aptitude safe-upgrade
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Updating packages (removing and reinstalling if necessary)</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt full-upgrade
+apt-get dist-upgrade
+aptitude full-upgrade
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Eliminate unnecessary dependencies</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt autoremove
+apt-get autoremove
+aptitude autoremove
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Search package</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt search &lt;pkg&gt;
+apt-cache search &lt;pkg&gt;
+aptitude search &lt;pkg&gt;
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Display package info</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt show &lt;pkg&gt;
+apt-cache show &lt;pkg&gt;
+aptitude show &lt;pkg&gt;
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Display status and installation candidate</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt policy &lt;pkg&gt;
+apt-cache policy &lt;pkg&gt;
+aptitude policy &lt;pkg&gt;
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Show sources to repositories</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt policy
+apt-cache policy
+aptitude policy
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">Editing source repositories</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt edit-sources
+</code></pre></div></div>
+<p><br />
+<code class="language-plaintext highlighter-rouge">List packages by name</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dpkg -l | grep &lt;name&gt;
+</code></pre></div></div>
 
-<p>if you want to find out more about the tool, I recommend you to go to the official website by clicking <a href="https://git-scm.com/">HERE</a></p>
+<p><br />
+There are more commands in these tools, these are the most used when updating and managing packages, I hope they have been useful for you!</p>
 
-<h2 id="enjoy"><strong>Enjoy!</strong></h2>
+<hr />
+<h2 id="differece-of-apt-and-aptitude">Differece of APT and Aptitude</h2>
+
+<center>
+<img src="/resources/posts/apt03.png" />
+</center>
+<p><br /></p>
+
+<p>Now that we have a good understanding of what <strong>APT and Aptitude</strong> has to offer, it is now time to learn about their difference.</p>
+
+<p>The first difference you will notice is that APT is a <em>lower-level</em> package manager, and Aptitude is a <em>high-level</em> package manager. This means that APT can be used in other higher-level package managers.</p>
+
+<p>Another big difference is the functionality offered by both of the tools. <code class="language-plaintext highlighter-rouge">aptitude</code> offers better functionality compared to <code class="language-plaintext highlighter-rouge">apt-get</code>. In fact, it contains the functionalities of <code class="language-plaintext highlighter-rouge">apt-get</code>, <code class="language-plaintext highlighter-rouge">apt-mark</code>, and <code class="language-plaintext highlighter-rouge">apt-cache</code>.</p>
+
+<p>For instance, apt-get can be used effectively for package up-gradation, installation, resolving dependencies, system up-gradation, and so on. However, Aptitude offers more features thanks to the inclusion of functionalities of apt-cache and apt-mark. This means Aptitude can be used for more functionality, including package search, setting package installation as automation or manual, and more refined actions on the packages.</p>
+
+<p>Which one is better, and which one should you use? In simple terms, you can use any of them considering that your requirement is met. If you find the APT command tool to benefit your work, then, by all means, use it for doing your work. Both are capable of providing the necessary means to do package management!</p>
+
+<hr />
 
     </div>
 
@@ -241,25 +320,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Basics%20Git&url=http://localhost:6060/blog/basics-git"
+        href="https://twitter.com/intent/tweet?text=Apt%20vs%20Aptitude&url=http://localhost:6060/blog/apt-aptitude"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/basics-git"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/apt-aptitude"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/basics-git&amp;media=http://localhost:6060/resources/posts/basics-git.png&amp;description=Basics%20Git"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/apt-aptitude&amp;media=http://localhost:6060https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif&amp;description=Apt%20vs%20Aptitude"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/basics-git&title=Basics%20Git&summary=What%20is%20Git?%20Know%20the%20tool%20and%20its%20basic%20commands.&source=Daniel"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/apt-aptitude&title=Apt%20vs%20Aptitude&summary=Learn%20what%20a%20package%20manager%20is%20and%20how%20to%20use%20it.&source=Daniel"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -276,15 +355,25 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
+  <a class="post__prev" href="/blog/lvm">
+    <div class="prev__image">
+      <img loading="lazy" src="https://media.giphy.com/media/l0NwPdduX7IL1rS1i/giphy.gif" alt="Apt vs Aptitude">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">LVM</h2>
+    </div>
+  </a>
+  
 
   
-  <a class="post__next" href="/blog/basic-linux-commands">
+  <a class="post__next" href="/blog/ufw">
     <div class="next__box">
       <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Basics Linux</h2>
+      <h2 class="post__nav__title">UFW</h2>
     </div>
     <div class="next__image">
-      <img loading="lazy" src="/resources/posts/basics-linux.png" alt="Basics Git">
+      <img loading="lazy" src="https://media.giphy.com/media/VGwTq3G6a39cI/giphy.gif" alt="Apt vs Aptitude">
     </div>
   </a>
   
@@ -312,7 +401,7 @@
                 
                 
                   
-                    <a href="/tags#Git" class="section__link related-tag">See all<span> Git</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tags#Linux" class="section__link related-tag">See all<span> Linux</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -390,57 +479,6 @@
             
       
             
-
-              <div class="article col col-4 col-d-6 col-t-12">
-                <div class="article__inner">
-              
-                  
-                  <div class="image-wrap">
-                    <a class="article__image" href="/blog/apt-aptitude">
-                      <img loading="lazy" src="https://media.giphy.com/media/3oKIP9cJEOO9ljKoCc/giphy.gif" alt="Apt vs Aptitude">
-                    </a>
-                  </div>
-                  
-              
-                  <div class="article__content">
-              
-                    
-                    <div class="article-tags__box">
-                      
-                      <a href="/tag/linux" class="article__tag">Linux</a>
-                      
-                      <a href="/tag/debian" class="article__tag">Debian</a>
-                      
-                      <a href="/tag/guide" class="article__tag">Guide</a>
-                      
-                    </div>
-                    
-              
-                    <h2 class="article__title">
-                      <a href="/blog/apt-aptitude">Apt vs Aptitude</a>
-                    </h2>
-              
-                    <p class="article__excerpt">
-                      Learn what a package manager is and how to use it.
-                    </p>
-              
-                    <div class="article__meta">
-                      <div class="article__author-image">
-                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
-                      </div>
-                      <div class="article-info">
-                        <div class="article__author-name">goldcod3</div>
-                        <span class="article__date"><time datetime="2022-08-24T00:01:35+02:00">24 Aug 2022</time></span>
-                      </div>
-                    </div>
-              
-                  </div>
-                </div>
-              </div>
-
-            
-                
-              
             
             
             
@@ -489,6 +527,64 @@
                       <div class="article-info">
                         <div class="article__author-name">goldcod3</div>
                         <span class="article__date"><time datetime="2022-08-19T18:01:35+02:00">19 Aug 2022</time></span>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            
+                
+              
+            
+            
+            
+      
+            
+      
+            
+
+              <div class="article col col-4 col-d-6 col-t-12">
+                <div class="article__inner">
+              
+                  
+                  <div class="image-wrap">
+                    <a class="article__image" href="/blog/virtual-machines">
+                      <img loading="lazy" src="https://media.giphy.com/media/l1J9qemh1La8b0Rag/giphy.gif" alt="Virtual Machines">
+                    </a>
+                  </div>
+                  
+              
+                  <div class="article__content">
+              
+                    
+                    <div class="article-tags__box">
+                      
+                      <a href="/tag/virtual machine" class="article__tag">Virtual Machine</a>
+                      
+                      <a href="/tag/virtualization" class="article__tag">Virtualization</a>
+                      
+                      <a href="/tag/guide" class="article__tag">Guide</a>
+                      
+                    </div>
+                    
+              
+                    <h2 class="article__title">
+                      <a href="/blog/virtual-machines">Virtual Machines</a>
+                    </h2>
+              
+                    <p class="article__excerpt">
+                      What is a virtual machine? How to create a VM?.
+                    </p>
+              
+                    <div class="article__meta">
+                      <div class="article__author-image">
+                        <img loading="lazy" src="/resources/images/img_avatar.png" alt="goldcod3">
+                      </div>
+                      <div class="article-info">
+                        <div class="article__author-name">goldcod3</div>
+                        <span class="article__date"><time datetime="2022-08-16T07:01:35+02:00">16 Aug 2022</time></span>
                       </div>
                     </div>
               
